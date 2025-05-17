@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 160 24% 18%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 84 59% 50%;
+    --secondary-foreground: 160 24% 18%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 84 59% 50%;
+    --accent-foreground: 160 24% 18%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 160 24% 18%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 160 24% 10%;
+    --foreground: 210 40% 98%;
+    --card: 160 24% 12%;
+    --card-foreground: 210 40% 98%;
+    --popover: 160 24% 12%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 84 59% 50%;
+    --primary-foreground: 160 24% 18%;
+    --secondary: 160 24% 18%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 160 24% 15%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 160 24% 15%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 160 24% 15%;
+    --input: 160 24% 15%;
+    --ring: 84 59% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-playfair;
+  }
+}
+
+.font-playfair {
+  font-family: var(--font-playfair);
+}
+
+.font-sans {
+  font-family: var(--font-inter);
+}
+
+.highlight-text {
+  @apply text-secondary font-bold;
+}
+
+.section-padding {
+  @apply py-16 md:py-24;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #233c36 0%, #2d4f46 100%);
+}
+
+.accent-border {
+  border-color: hsl(var(--accent));
+}
+
+.custom-shape-divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 70px;
+}
+
+.custom-shape-divider .shape-fill {
+  fill: #ffffff;
+}
