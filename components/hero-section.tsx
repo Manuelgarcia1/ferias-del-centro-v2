@@ -88,7 +88,7 @@ export function HeroSection() {
                 </div>
                 <div>
                   <p className="text-sm text-white/70">Ubicación</p>
-                  <p className="font-medium">San Carlos de Bolívar</p>
+                  <p className="font-medium">Bolívar</p>
                 </div>
               </div>
 
