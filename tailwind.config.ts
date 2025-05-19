@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
@@ -60,9 +60,9 @@ const config = {
           dark: "#1a2e29",
         },
         customAccent: {
-          DEFAULT: "#9ACA3C",
-          light: "#b2d86a",
-          dark: "#7da22e",
+          DEFAULT: "#7D9E36", // tono oliva suave, saturación moderada
+          light: "#9FBF62", // más claro para hover/alt
+          dark: "#5B7328", // más oscuro para estados activos
         },
       },
       borderRadius: {
@@ -99,6 +99,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;

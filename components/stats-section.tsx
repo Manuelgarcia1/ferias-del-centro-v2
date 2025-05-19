@@ -2,7 +2,6 @@
 
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
-import { Badge } from "@/components/ui/badge"
 
 const stats = [
   {
@@ -40,7 +39,15 @@ export function StatsSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <Badge className="bg-customAccent text-customGreen mb-4">Nuestros Números</Badge>
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
+            transition={{ duration: 0.6 }}
+            className="mb-4"
+          >
+            <h3 className="text-xl font-medium text-customAccent uppercase tracking-wider">Nuestros Números</h3>
+          </motion.div>
+
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Beneficios de Elegir <span className="text-customAccent">Ferias del Centro</span>
           </h2>

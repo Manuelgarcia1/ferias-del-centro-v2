@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import { Badge } from "@/components/ui/badge"
 
 export function ContactSection() {
   const ref = useRef(null)
@@ -37,7 +36,7 @@ export function ContactSection() {
   ]
 
   return (
-    <section className="py-24 bg-gray-50" id="contacto" ref={ref}>
+    <section className="py-24 bg-gray-50" ref={ref}>
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ y: 20, opacity: 0 }}
@@ -45,7 +44,15 @@ export function ContactSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <Badge className="bg-customAccent text-customGreen mb-4">Contacto</Badge>
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
+            transition={{ duration: 0.6 }}
+            className="mb-4"
+          >
+            <h3 className="text-xl font-medium text-customAccent uppercase tracking-wider">Contacto</h3>
+          </motion.div>
+
           <h2 className="text-3xl md:text-4xl font-bold text-customGreen mb-4">
             Estamos a su <span className="text-customAccent">Disposición</span>
           </h2>

@@ -3,7 +3,6 @@
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { Badge } from "@/components/ui/badge"
 
 const faqs = [
   {
@@ -46,7 +45,15 @@ export function FaqSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <Badge className="bg-customAccent text-customGreen mb-4">Preguntas Frecuentes</Badge>
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
+            transition={{ duration: 0.6 }}
+            className="mb-4"
+          >
+            <h3 className="text-xl font-medium text-customAccent uppercase tracking-wider">Preguntas Frecuentes</h3>
+          </motion.div>
+
           <h2 className="text-3xl md:text-4xl font-bold text-customGreen mb-4">
             Respuestas a sus <span className="text-customAccent">Consultas</span>
           </h2>

@@ -4,7 +4,6 @@ import { useRef } from "react"
 import Image from "next/image"
 import { motion, useInView } from "framer-motion"
 import { Calendar, DollarSign, LineChart, ShoppingCart, ArrowRight } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
 const services = [
@@ -33,7 +32,7 @@ export function ServicesSection() {
   const isInView = useInView(ref, { once: true, amount: 0.3 })
 
   return (
-    <section className="py-24 bg-gray-50" id="servicios" ref={ref}>
+    <section className="py-24 bg-gray-50" ref={ref}>
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ y: 20, opacity: 0 }}
@@ -41,7 +40,15 @@ export function ServicesSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16 max-w-3xl mx-auto"
         >
-          <Badge className="bg-customAccent text-customGreen mb-4">Nuestros Servicios</Badge>
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
+            transition={{ duration: 0.6 }}
+            className="mb-4"
+          >
+            <h3 className="text-xl font-medium text-customAccent uppercase tracking-wider">Nuestros Servicios</h3>
+          </motion.div>
+
           <h2 className="text-3xl md:text-4xl font-bold text-customGreen mb-4">
             Una Plataforma para Hacer la <span className="text-customAccent">Comercialización</span> Eficiente
           </h2>
@@ -61,7 +68,13 @@ export function ServicesSection() {
               className="bg-white rounded-2xl overflow-hidden shadow-lg card-hover"
             >
               <div className="relative h-48">
-                <Image src={service.image || "/placeholder.svg"} alt={service.title} fill className="object-cover" />
+                <Image
+                  src={service.image || "/placeholder.svg"}
+                  alt={service.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-customGreen/80 to-transparent opacity-60"></div>
                 <div className="absolute top-4 left-4 bg-white p-3 rounded-full">{service.icon}</div>
               </div>
@@ -111,6 +124,7 @@ export function ServicesSection() {
                 alt="Financiación"
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>

@@ -3,7 +3,6 @@
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import { Star } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 
 const testimonials = [
@@ -43,7 +42,15 @@ export function TestimonialsSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <Badge className="bg-customAccent text-customGreen mb-4">Testimonios</Badge>
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
+            transition={{ duration: 0.6 }}
+            className="mb-4"
+          >
+            <h3 className="text-xl font-medium text-customAccent uppercase tracking-wider">Testimonios</h3>
+          </motion.div>
+
           <h2 className="text-3xl md:text-4xl font-bold text-customGreen mb-4">
             Lo Que Dicen Nuestros <span className="text-customAccent">Clientes</span>
           </h2>

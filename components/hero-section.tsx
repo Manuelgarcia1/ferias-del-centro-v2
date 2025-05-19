@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import { useState, useEffect, useCallback } from "react"
-import Image from "next/image"
-import { motion, AnimatePresence } from "framer-motion"
-import { ChevronLeft, ChevronRight, MapPin, ArrowRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
+import { useState, useCallback, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight, MapPin, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const slides = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1605433974219-e46ccd9a163d?q=80&w=2070&auto=format&fit=crop",
+    image: "/images/carousel1.jpg",
     title: "Comercialización de Hacienda",
     subtitle: "San Carlos de Bolívar",
     description:
@@ -18,7 +18,7 @@ const slides = [
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1516467716199-8b782a7f3f8d?q=80&w=2069&auto=format&fit=crop",
+    image: "/images/carousel2.jpg",
     title: "Experiencia y Confianza",
     subtitle: "Desde 1983",
     description:
@@ -26,33 +26,66 @@ const slides = [
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1470072768013-bf9532016c10?q=80&w=2070&auto=format&fit=crop",
+    image: "/images/carousel3.jpg",
     title: "Remates y Ferias",
     subtitle: "Servicio Integral",
-    description: "Ofrecemos un servicio completo para productores ganaderos con las mejores condiciones del mercado.",
+    description:
+      "Ofrecemos un servicio completo para productores ganaderos con las mejores condiciones del mercado.",
   },
-]
+];
 
 export function HeroSection() {
-  const [current, setCurrent] = useState(0)
+  const [current, setCurrent] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [loadedImages, setLoadedImages] = useState<{ [key: string]: boolean }>(
+    {}
+  );
+
+  // Precarga de imágenes para mejorar el rendimiento
+  useEffect(() => {
+    const preloadImages = async () => {
+      try {
+        const imagePromises = slides.map((slide) => {
+          return new Promise<void>((resolve) => {
+            const img = document.createElement("img");
+            img.src = slide.image;
+            img.crossOrigin = "anonymous";
+            img.onload = () => {
+              setLoadedImages((prev) => ({ ...prev, [slide.image]: true }));
+              resolve();
+            };
+            img.onerror = () => {
+              console.error(`Error loading image: ${slide.image}`);
+              resolve();
+            };
+          });
+        });
+
+        await Promise.all(imagePromises);
+        setImagesLoaded(true);
+      } catch (error) {
+        console.error("Error preloading images:", error);
+        // Si hay error en la precarga, mostramos las imágenes de todos modos
+        setImagesLoaded(true);
+      }
+    };
+
+    preloadImages();
+  }, []);
 
   const nextSlide = useCallback(() => {
-    setCurrent((current) => (current === slides.length - 1 ? 0 : current + 1))
-  }, [])
+    setCurrent((current) => (current === slides.length - 1 ? 0 : current + 1));
+  }, []);
 
   const prevSlide = useCallback(() => {
-    setCurrent((current) => (current === 0 ? slides.length - 1 : current - 1))
-  }, [])
+    setCurrent((current) => (current === 0 ? slides.length - 1 : current - 1));
+  }, []);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide()
-    }, 5000)
-    return () => clearInterval(interval)
-  }, [nextSlide])
+  // Determinar si la imagen actual está cargada
+  const isCurrentImageLoaded = loadedImages[slides[current]?.image] || false;
 
   return (
-    <section className="relative h-screen w-full overflow-hidden pt-16 bg-customGreen">
+    <section className="relative h-screen w-full overflow-hidden pt-32 bg-customGreen">
       <div className="absolute inset-0 bg-hero-pattern opacity-10 z-0"></div>
 
       <div className="container mx-auto px-4 h-full flex flex-col justify-center relative z-10">
@@ -63,21 +96,33 @@ export function HeroSection() {
             transition={{ duration: 0.8 }}
             className="text-white"
           >
-            <Badge className="bg-customAccent text-customGreen mb-4">Desde 1983</Badge>
             <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
-              Revolucionando la <span className="text-customAccent">Comercialización</span> de Hacienda
+              Revolucionando la{" "}
+              <span className="text-customAccent">Comercialización</span>
+              <br />
+              de Hacienda
             </h1>
             <p className="text-lg md:text-xl mb-8 text-white/80 max-w-xl">
-              Somos una empresa con más de 40 años de trayectoria, buscando día a día ofrecer el mejor servicio de
-              comercialización de hacienda.
+              Somos una empresa con más de 40 años de trayectoria, buscando día
+              a día ofrecer el mejor servicio de comercialización de hacienda.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="bg-customAccent text-customGreen hover:bg-customAccent/90 group">
-                Ver Remates
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <Button
+                size="lg"
+                className="bg-customAccent text-customGreen hover:bg-customAccent/90 group"
+                asChild
+              >
+                <Link href="/remates">
+                  Ver Remates
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                Contactar
+              <Button
+                size="lg"
+                className="border-2 border-white text-white bg-transparent hover:bg-white/20 font-medium"
+                asChild
+              >
+                <Link href="#contacto">Contactar</Link>
               </Button>
             </div>
 
@@ -88,7 +133,7 @@ export function HeroSection() {
                 </div>
                 <div>
                   <p className="text-sm text-white/70">Ubicación</p>
-                  <p className="font-medium">Bolívar</p>
+                  <p className="font-medium">San Carlos de Bolívar</p>
                 </div>
               </div>
 
@@ -104,7 +149,14 @@ export function HeroSection() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   >
-                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                    <rect
+                      x="2"
+                      y="7"
+                      width="20"
+                      height="14"
+                      rx="2"
+                      ry="2"
+                    ></rect>
                     <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
                   </svg>
                 </div>
@@ -122,48 +174,81 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="hidden lg:block relative"
           >
-            <div className="relative w-full h-[500px] rounded-2xl overflow-hidden">
+            <div
+              className="relative w-full rounded-2xl overflow-hidden bg-gray-100/30"
+              style={{ paddingBottom: "60%" }}
+            >
+              {/* Placeholder mientras se cargan las imágenes */}
+              {!isCurrentImageLoaded && (
+                <div className="absolute inset-0 bg-customGreen-dark flex items-center justify-center">
+                  <div className="w-12 h-12 border-4 border-customAccent border-t-transparent rounded-full animate-spin"></div>
+                </div>
+              )}
+
               <AnimatePresence mode="wait">
                 <motion.div
                   key={current}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  transition={{ duration: 1 }}
+                  transition={{ duration: 0.5 }}
                   className="absolute inset-0"
                 >
-                  <Image
-                    src={slides[current].image || "/placeholder.svg"}
-                    alt={slides[current].title}
-                    fill
-                    priority
-                    className="object-cover rounded-2xl"
-                  />
+                  <div className="relative w-full h-full">
+                    <Image
+                      src={slides[current].image || "/placeholder.svg"}
+                      alt={slides[current].title}
+                      fill
+                      priority
+                      quality={100}
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className={`object-cover rounded-2xl transition-opacity duration-300 ${
+                        isCurrentImageLoaded ? "opacity-100" : "opacity-0"
+                      }`}
+                      style={{ objectPosition: "center center" }}
+                      onLoadingComplete={() => {
+                        setLoadedImages((prev) => ({
+                          ...prev,
+                          [slides[current].image]: true,
+                        }));
+                      }}
+                    />
+                  </div>
                 </motion.div>
               </AnimatePresence>
 
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
-                <h3 className="text-xl font-bold text-white">{slides[current].title}</h3>
+                <h3 className="text-xl font-bold text-white">
+                  {slides[current].title}
+                </h3>
                 <p className="text-white/80">{slides[current].subtitle}</p>
               </div>
 
-              <div className="absolute top-1/2 left-4 transform -translate-y-1/2">
+              <div className="absolute top-1/2 left-4 transform -translate-y-1/2 z-10">
                 <Button
                   variant="ghost"
                   size="icon"
                   className="rounded-full bg-black/20 text-white hover:bg-black/40"
-                  onClick={prevSlide}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    prevSlide();
+                  }}
                 >
                   <ChevronLeft className="h-6 w-6" />
                 </Button>
               </div>
 
-              <div className="absolute top-1/2 right-4 transform -translate-y-1/2">
+              <div className="absolute top-1/2 right-4 transform -translate-y-1/2 z-10">
                 <Button
                   variant="ghost"
                   size="icon"
                   className="rounded-full bg-black/20 text-white hover:bg-black/40"
-                  onClick={nextSlide}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    nextSlide();
+                  }}
                 >
                   <ChevronRight className="h-6 w-6" />
                 </Button>
@@ -175,7 +260,9 @@ export function HeroSection() {
                     key={index}
                     onClick={() => setCurrent(index)}
                     className={`h-2 rounded-full transition-all ${
-                      index === current ? "bg-customAccent w-8" : "bg-white/50 w-2"
+                      index === current
+                        ? "bg-customAccent w-8"
+                        : "bg-white/50 w-2"
                     }`}
                   />
                 ))}
@@ -186,21 +273,12 @@ export function HeroSection() {
               <div className="text-center">
                 <p className="text-xs font-bold text-customGreen">PRÓXIMO</p>
                 <p className="text-lg font-bold text-customGreen">REMATE</p>
-                <p className="text-xs text-customGreen">15 JUNIO</p>
+                <p className="text-xs text-customGreen">21 MAYO</p>
               </div>
             </div>
           </motion.div>
         </div>
       </div>
-
-      <div className="custom-shape-divider">
-        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path
-            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-            className="shape-fill"
-          ></path>
-        </svg>
-      </div>
     </section>
-  )
+  );
 }
