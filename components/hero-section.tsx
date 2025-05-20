@@ -40,7 +40,6 @@ export function HeroSection() {
   const [loadedImages, setLoadedImages] = useState<{ [key: string]: boolean }>(
     {}
   );
-  const [imageError, setImageError] = useState<{ [key: string]: boolean }>({});
 
   // Precarga de imágenes para mejorar el rendimiento
   useEffect(() => {
@@ -57,7 +56,6 @@ export function HeroSection() {
             };
             img.onerror = () => {
               console.error(`Error loading image: ${slide.image}`);
-              setImageError((prev) => ({ ...prev, [slide.image]: true }));
               resolve();
             };
           });
@@ -85,15 +83,6 @@ export function HeroSection() {
 
   // Determinar si la imagen actual está cargada
   const isCurrentImageLoaded = loadedImages[slides[current]?.image] || false;
-  const hasCurrentImageError = imageError[slides[current]?.image] || false;
-
-  // Fallback para imágenes que no se pueden cargar
-  const getFallbackImage = (index: number) => {
-    // Usar un placeholder genérico basado en el índice
-    return `/placeholder.svg?height=800&width=1200&query=cattle auction ${
-      index + 1
-    }`;
-  };
 
   return (
     <section className="relative h-screen w-full overflow-hidden pt-32 bg-customGreen">
@@ -109,8 +98,9 @@ export function HeroSection() {
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
               Revolucionando la{" "}
-              <span className="text-customAccent">Comercialización</span> de
-              Hacienda
+              <span className="text-customAccent">Comercialización</span>
+              <br />
+              de Hacienda
             </h1>
             <p className="text-lg md:text-xl mb-8 text-white/80 max-w-xl">
               Somos una empresa con más de 40 años de trayectoria, buscando día
@@ -189,7 +179,7 @@ export function HeroSection() {
               style={{ paddingBottom: "60%" }}
             >
               {/* Placeholder mientras se cargan las imágenes */}
-              {!isCurrentImageLoaded && !hasCurrentImageError && (
+              {!isCurrentImageLoaded && (
                 <div className="absolute inset-0 bg-customGreen-dark flex items-center justify-center">
                   <div className="w-12 h-12 border-4 border-customAccent border-t-transparent rounded-full animate-spin"></div>
                 </div>
@@ -206,20 +196,14 @@ export function HeroSection() {
                 >
                   <div className="relative w-full h-full">
                     <Image
-                      src={
-                        hasCurrentImageError
-                          ? getFallbackImage(current)
-                          : slides[current].image
-                      }
+                      src={slides[current].image || "/placeholder.svg"}
                       alt={slides[current].title}
                       fill
                       priority
                       quality={100}
                       sizes="(max-width: 768px) 100vw, 50vw"
                       className={`object-cover rounded-2xl transition-opacity duration-300 ${
-                        isCurrentImageLoaded || hasCurrentImageError
-                          ? "opacity-100"
-                          : "opacity-0"
+                        isCurrentImageLoaded ? "opacity-100" : "opacity-0"
                       }`}
                       style={{ objectPosition: "center center" }}
                       onLoadingComplete={() => {
@@ -228,13 +212,6 @@ export function HeroSection() {
                           [slides[current].image]: true,
                         }));
                       }}
-                      onError={() => {
-                        setImageError((prev) => ({
-                          ...prev,
-                          [slides[current].image]: true,
-                        }));
-                      }}
-                      unoptimized={true}
                     />
                   </div>
                 </motion.div>
