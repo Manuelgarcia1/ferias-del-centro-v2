@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 const slides = [
   {
     id: 1,
-    image: "/images/carousel1.jpg",
+    image: "/images/Carousel1.jpg",
     title: "Comercialización de Hacienda",
     subtitle: "San Carlos de Bolívar",
     description:
@@ -18,7 +18,7 @@ const slides = [
   },
   {
     id: 2,
-    image: "/images/carousel2.jpg",
+    image: "/images/Carousel2.jpg",
     title: "Experiencia y Confianza",
     subtitle: "Desde 1983",
     description:
@@ -26,7 +26,7 @@ const slides = [
   },
   {
     id: 3,
-    image: "/images/carousel3.jpg",
+    image: "/images/Carousel3.jpg",
     title: "Remates y Ferias",
     subtitle: "Servicio Integral",
     description:
