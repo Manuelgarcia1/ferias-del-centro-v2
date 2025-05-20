@@ -32,24 +32,10 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <head>
-        <link
-          rel="preload"
-          href="/images/carousel1.jpg"
-          as="image"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/images/carousel2.jpg"
-          as="image"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/images/carousel3.jpg"
-          as="image"
-          crossOrigin="anonymous"
-        />
+        {/* Eliminar preload para evitar errores 404 si las imágenes no existen */}
+        {/* <link rel="preload" href="/images/carousel1.jpg" as="image" crossOrigin="anonymous" />
+        <link rel="preload" href="/images/carousel2.jpg" as="image" crossOrigin="anonymous" />
+        <link rel="preload" href="/images/carousel3.jpg" as="image" crossOrigin="anonymous" /> */}
         <link
           rel="preload"
           href="/images/cattle-group.jpg"
