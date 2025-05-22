@@ -15,6 +15,7 @@ export function NextRemateSection() {
     <section className="py-16 bg-gray-50" ref={ref}>
       <div className="container mx-auto px-4">
         <motion.div
+          whileInView={{ y: 0, opacity: 1 }}
           initial={{ y: 20, opacity: 0 }}
           animate={isInView ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
           transition={{ duration: 0.8 }}
@@ -32,6 +33,7 @@ export function NextRemateSection() {
         </motion.div>
 
         <motion.div
+          whileInView={{ y: 0, opacity: 1 }}
           initial={{ y: 50, opacity: 0 }}
           animate={isInView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}

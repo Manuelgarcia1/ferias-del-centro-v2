@@ -44,6 +44,7 @@ export function Header() {
                 key={item.name}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                whileInView={{ y: 0, opacity: 1 }}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
@@ -58,6 +59,7 @@ export function Header() {
               </motion.div>
             ))}
             <motion.div
+              whileInView={{ y: 0, opacity: 1 }}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: navItems.length * 0.1 }}
@@ -88,6 +90,7 @@ export function Header() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            whileInView={{ y: 0, opacity: 1 }}
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}

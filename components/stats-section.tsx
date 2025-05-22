@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { useRef } from "react"
-import { motion, useInView } from "framer-motion"
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 const stats = [
   {
@@ -24,36 +24,41 @@ const stats = [
     label: "Cabezas comercializadas por año",
     description: "Volumen de operaciones en constante crecimiento",
   },
-]
+];
 
 export function StatsSection() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.3 })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
     <section className="py-24 bg-customGreen text-white" ref={ref}>
       <div className="container mx-auto px-4">
         <motion.div
+          whileInView={{ y: 0, opacity: 1 }}
           initial={{ y: 20, opacity: 0 }}
           animate={isInView ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
           <motion.div
+            whileInView={{ y: 0, opacity: 1 }}
             initial={{ opacity: 0, y: -20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
             transition={{ duration: 0.6 }}
             className="mb-4"
           >
-            <h3 className="text-xl font-medium text-customAccent uppercase tracking-wider">Nuestros Números</h3>
+            <h3 className="text-xl font-medium text-customAccent uppercase tracking-wider">
+              Nuestros Números
+            </h3>
           </motion.div>
 
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Beneficios de Elegir <span className="text-customAccent">Ferias del Centro</span>
+            Beneficios de Elegir{" "}
+            <span className="text-customAccent">Ferias del Centro</span>
           </h2>
           <p className="text-lg text-white/80 max-w-3xl mx-auto">
-            Nuestra trayectoria y experiencia nos respaldan. Estos son algunos de los números que demuestran nuestro
-            compromiso con la excelencia.
+            Nuestra trayectoria y experiencia nos respaldan. Estos son algunos
+            de los números que demuestran nuestro compromiso con la excelencia.
           </p>
         </motion.div>
 
@@ -61,12 +66,15 @@ export function StatsSection() {
           {stats.map((stat, index) => (
             <motion.div
               key={index}
+              whileInView={{ y: 0, opacity: 1 }}
               initial={{ y: 50, opacity: 0 }}
               animate={isInView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center"
             >
-              <div className="text-4xl md:text-5xl font-bold text-customAccent mb-2">{stat.value}</div>
+              <div className="text-4xl md:text-5xl font-bold text-customAccent mb-2">
+                {stat.value}
+              </div>
               <h3 className="text-xl font-bold mb-2">{stat.label}</h3>
               <p className="text-white/70">{stat.description}</p>
             </motion.div>
@@ -74,5 +82,5 @@ export function StatsSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

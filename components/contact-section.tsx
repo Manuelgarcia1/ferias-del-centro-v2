@@ -41,12 +41,14 @@ export function ContactSection() {
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
           animate={isInView ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
           <motion.div
             initial={{ opacity: 0, y: -20 }}
+            whileInView={{ y: 0, opacity: 1 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
             transition={{ duration: 0.6 }}
             className="mb-4"
@@ -68,6 +70,7 @@ export function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
           {/* IZQUIERDA */}
           <motion.div
+            whileInView={{ y: 0, opacity: 1 }}
             initial={{ x: -50, opacity: 0 }}
             animate={isInView ? { x: 0, opacity: 1 } : { x: -50, opacity: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -139,6 +142,7 @@ export function ContactSection() {
 
           {/* DERECHA */}
           <motion.div
+            whileInView={{ y: 0, opacity: 1 }}
             initial={{ x: 50, opacity: 0 }}
             animate={isInView ? { x: 0, opacity: 1 } : { x: 50, opacity: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}

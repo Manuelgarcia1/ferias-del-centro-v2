@@ -91,6 +91,7 @@ export function HeroSection() {
       <div className="container mx-auto px-4 h-full flex flex-col justify-center relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center h-full">
           <motion.div
+            whileInView={{ y: 0, opacity: 1 }}
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -169,6 +170,7 @@ export function HeroSection() {
           </motion.div>
 
           <motion.div
+            whileInView={{ y: 0, opacity: 1 }}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -188,6 +190,7 @@ export function HeroSection() {
               <AnimatePresence mode="wait">
                 <motion.div
                   key={current}
+                  whileInView={{ y: 0, opacity: 1 }}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}

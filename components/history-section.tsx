@@ -17,11 +17,13 @@ export function HistorySection() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
+            whileInView={{ y: 0, opacity: 1 }}
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ duration: 0.8 }}
           >
             <motion.div
+              whileInView={{ y: 0, opacity: 1 }}
               initial={{ opacity: 0, y: -20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
               transition={{ duration: 0.6 }}
@@ -61,6 +63,7 @@ export function HistorySection() {
               </TabsList>
 
               <motion.div
+                whileInView={{ y: 0, opacity: 1 }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
@@ -132,6 +135,7 @@ export function HistorySection() {
           </motion.div>
 
           <motion.div
+            whileInView={{ y: 0, opacity: 1 }}
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.8, delay: 0.2 }}

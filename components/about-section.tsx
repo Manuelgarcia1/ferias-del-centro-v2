@@ -36,6 +36,7 @@ export function AboutSection() {
         {/* Encabezado de la sección */}
         <div className="text-center mb-16">
           <motion.div
+            whileInView={{ y: 0, opacity: 1 }}
             initial={{ opacity: 0, y: -20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
             transition={{ duration: 0.6 }}
@@ -47,6 +48,7 @@ export function AboutSection() {
           </motion.div>
 
           <motion.div
+            whileInView={{ y: 0, opacity: 1 }}
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -67,6 +69,7 @@ export function AboutSection() {
 
         {/* Puntos clave */}
         <motion.div
+          whileInView={{ y: 0, opacity: 1 }}
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.3 }}
@@ -95,6 +98,7 @@ export function AboutSection() {
           {features.map((feature, index) => (
             <motion.div
               key={index}
+              whileInView={{ y: 0, opacity: 1 }}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
@@ -116,6 +120,7 @@ export function AboutSection() {
 
         {/* Contador de experiencia */}
         <motion.div
+          whileInView={{ y: 0, opacity: 1 }}
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.7 }}
