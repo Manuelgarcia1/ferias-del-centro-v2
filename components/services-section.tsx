@@ -1,8 +1,7 @@
 "use client";
 
-import { useRef } from "react";
 import Image from "next/image";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   Calendar,
   DollarSign,
@@ -40,21 +39,20 @@ const services = [
 ];
 
 export function ServicesSection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
-
   return (
-    <section className="py-16 bg-gray-50" ref={ref}>
+    <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ y: 20, opacity: 0 }}
-          animate={isInView ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8 }}
           className="text-center mb-16 max-w-3xl mx-auto"
         >
           <motion.div
             initial={{ opacity: 0, y: -20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6 }}
             className="mb-4"
           >
@@ -79,13 +77,14 @@ export function ServicesSection() {
             <motion.div
               key={index}
               initial={{ y: 50, opacity: 0 }}
-              animate={isInView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               className="bg-white rounded-2xl overflow-hidden shadow-lg card-hover"
             >
               <div className="relative h-48">
                 <Image
-                  src={service.image || "/placeholder.svg"}
+                  src={service.image}
                   alt={service.title}
                   fill
                   className="object-cover"
@@ -115,7 +114,8 @@ export function ServicesSection() {
 
         <motion.div
           initial={{ y: 50, opacity: 0 }}
-          animate={isInView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mt-16 bg-customGreen rounded-2xl overflow-hidden"
         >

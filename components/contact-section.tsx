@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,6 +9,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 
 export function ContactSection() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+
   const contactInfo = [
     {
       icon: <MapPin className="h-5 w-5 text-customAccent" />,
@@ -33,19 +37,17 @@ export function ContactSection() {
   ];
 
   return (
-    <section className="py-24 bg-gray-50">
+    <section className="py-24 bg-gray-50" ref={ref}>
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ y: 20, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          viewport={{ once: true, amount: 0.3 }}
+          animate={isInView ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
           <motion.div
             initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
             transition={{ duration: 0.6 }}
             className="mb-4"
           >
@@ -67,8 +69,7 @@ export function ContactSection() {
           {/* IZQUIERDA */}
           <motion.div
             initial={{ x: -50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
+            animate={isInView ? { x: 0, opacity: 1 } : { x: -50, opacity: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="h-full"
           >
@@ -139,8 +140,7 @@ export function ContactSection() {
           {/* DERECHA */}
           <motion.div
             initial={{ x: 50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
+            animate={isInView ? { x: 0, opacity: 1 } : { x: 50, opacity: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="h-full flex flex-col justify-between"
           >
@@ -170,7 +170,7 @@ export function ContactSection() {
               <h3 className="text-2xl font-bold text-customGreen mb-4">
                 Nuestra Ubicación
               </h3>
-              <div className="absolute inset-0 mt-20 bg-gray-200 rounded-b-2xl overflow-hidden">
+              <div className="absolute inset-0 mt-20 bg-gray-200 rounded-b-2xl">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3218.508656312281!2d-61.116301273527974!3d-36.22713587368853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bfe3aca4a8acff%3A0x7e445efeccd9b9a4!2sFerias%20del%20Centro!5e0!3m2!1ses!2sar!4v1747937533790!5m2!1ses!2sar"
                   className="w-full h-full border-0"
