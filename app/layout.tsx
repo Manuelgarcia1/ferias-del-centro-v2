@@ -48,6 +48,9 @@ export default function RootLayout({
           as="image"
           crossOrigin="anonymous"
         />
+        {/* viewport para móviles */}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* Tus preload existentes */}
       </head>
       <body
         className={`${inter.variable} ${playfair.variable} font-sans overflow-x-hidden`}
