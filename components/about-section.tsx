@@ -31,7 +31,7 @@ export function AboutSection() {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <section className="py-24 bg-white" ref={ref} id="about">
+    <section className="py-16 bg-white" ref={ref} id="about">
       <div className="container mx-auto px-4">
         {/* Encabezado de la sección */}
         <div className="text-center mb-16">
@@ -119,7 +119,7 @@ export function AboutSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="mt-16 text-center"
+          className="mt-10 text-center"
         >
           <div className="inline-block bg-gray-50 px-6 py-4 rounded-xl shadow-sm">
             <div className="flex items-center">

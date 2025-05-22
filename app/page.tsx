@@ -20,7 +20,6 @@ export default function Home() {
       <div id="servicios">
         <ServicesSection />
       </div>
-      <HistorySection />
       <StatsSection />
       <TestimonialsSection />
       <FaqSection />
