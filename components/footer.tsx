@@ -41,7 +41,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center text-white/60">
           <p>© {new Date().getFullYear()} Ferias del Centro S.R.L.</p>
           <p className="mt-4 md:mt-0 flex items-center space-x-2">
-            <span>Diseñado por Manuel García</span>
+            <span>Diseñado y desarrollado por Manuel García</span>
             <Link
               href="https://github.com/Manuelgarcia1"
               target="_blank"
