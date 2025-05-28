@@ -19,15 +19,26 @@ export function NextRemateSection() {
           initial={{ y: 20, opacity: 0 }}
           animate={isInView ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-8"
+          className="text-center mb-16 max-w-3xl mx-auto"
         >
-          <div className="flex items-center justify-center mb-4">
-            <h2 className="text-xl font-medium text-customAccent uppercase tracking-wider">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
+            className="mb-4"
+          >
+            <h3 className="text-xl font-medium text-customAccent uppercase tracking-wider">
               Remates mensuales
-            </h2>
-          </div>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-            Organizamos remates ferias mensuales con las mejores condiciones del
+            </h3>
+          </motion.div>
+          <h2 className="text-3xl md:text-4xl font-bold text-customGreen mb-4">
+            Optimiza tus negociaciones con{" "}
+            <span className="text-customAccent">remates</span> profesionales
+          </h2>
+
+          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+            Organizamos remates mensuales con las mejores condiciones del
             mercado.
           </p>
         </motion.div>
@@ -47,6 +58,8 @@ export function NextRemateSection() {
                     src="/images/vacas4.jpg"
                     alt="1000 Vacunos"
                     fill
+                    priority // <-- aquí
+                    sizes="(max-width: 640px) 100vw, 50vw"
                     className="object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />

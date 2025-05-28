@@ -9,13 +9,13 @@ export const Logo: FC<LogoProps> = ({ className = "h-14 w-auto" }) => {
   return (
     <div className={`flex ${className}`}>
       <div className="flex items-center">
-        <div className="flex-shrink-0 mr-3">
+        <div className="flex-shrink-0 mt-3 mr-3">
           <Image
             src="/images/LogoFerias.png"
-            alt="Ferias del Centro Logo"
             width={30}
             height={30}
-            className="translate-y-[2px]" // Ajuste fino vertical
+            style={{ width: "auto", height: "auto" }}
+            alt="Logo Ferias"
           />
         </div>
 

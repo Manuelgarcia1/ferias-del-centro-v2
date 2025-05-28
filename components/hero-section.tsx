@@ -209,7 +209,7 @@ export function HeroSection() {
                         isCurrentImageLoaded ? "opacity-100" : "opacity-0"
                       }`}
                       style={{ objectPosition: "center center" }}
-                      onLoadingComplete={() => {
+                      onLoad={() => {
                         setLoadedImages((prev) => ({
                           ...prev,
                           [slides[current].image]: true,

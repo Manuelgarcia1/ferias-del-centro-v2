@@ -1,9 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    // Permite cargar imágenes desde Unsplash
-    domains: ["images.unsplash.com"],
-    // O patrón remoto para mayor flexibilidad:
+    // patrón remoto para mayor flexibilidad:
     remotePatterns: [
       {
         protocol: "https",

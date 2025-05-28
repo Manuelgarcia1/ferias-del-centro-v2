@@ -60,8 +60,8 @@ const config = {
           dark: "#1a2e29",
         },
         customAccent: {
-          DEFAULT: "#7D9E36", // tono oliva suave, saturación moderada
-          light: "#9FBF62", // más claro para hover/alt
+          DEFAULT: "#548132", // tono oliva suave, saturación moderada
+          light: "#687E40", // más claro para hover/alt
           dark: "#5B7328", // más oscuro para estados activos
         },
       },
@@ -92,9 +92,6 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         float: "float 6s ease-in-out infinite",
-      },
-      backgroundImage: {
-        "hero-pattern": "url('/images/hero-pattern.svg')",
       },
     },
   },

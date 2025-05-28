@@ -53,7 +53,7 @@ export function AboutSection() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-customGreen mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-customGreen mb-4">
               Una Empresa con{" "}
               <span className="text-customAccent">Trayectoria</span> y
               Compromiso
@@ -117,28 +117,6 @@ export function AboutSection() {
             </motion.div>
           ))}
         </div>
-
-        {/* Contador de experiencia */}
-        <motion.div
-          whileInView={{ y: 0, opacity: 1 }}
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
-          className="mt-10 text-center"
-        >
-          <div className="inline-block bg-gray-50 px-6 py-4 rounded-xl shadow-sm">
-            <div className="flex items-center">
-              <div className="w-16 h-16 rounded-full bg-customAccent/20 flex items-center justify-center mr-4">
-                <span className="text-3xl font-bold text-customAccent">40</span>
-              </div>
-              <div className="text-left">
-                <p className="text-sm text-gray-500">Años de</p>
-                <p className="font-bold text-customGreen">Experiencia</p>
-                <p className="text-gray-600 text-xs">Desde 1983</p>
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

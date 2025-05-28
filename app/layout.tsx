@@ -17,11 +17,17 @@ const playfair = Playfair_Display({
   variable: "--font-playfair",
 });
 
+// 1️⃣ Exportamos viewport de forma dedicada:
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 export const metadata: Metadata = {
   title: "Ferias del Centro - Desde 1983",
   description:
     "Somos una empresa con más de 40 años de trayectoria, buscando día a día ofrecer el mejor servicio de comercialización de hacienda.",
-  viewport: "width=device-width, initial-scale=1.0, maximum-scale=1.0",
 };
 
 export default function RootLayout({
@@ -31,27 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" suppressHydrationWarning>
-      <head>
-        {/* Eliminar preload para evitar errores 404 si las imágenes no existen */}
-        {/* <link rel="preload" href="/images/carousel1.jpg" as="image" crossOrigin="anonymous" />
-        <link rel="preload" href="/images/carousel2.jpg" as="image" crossOrigin="anonymous" />
-        <link rel="preload" href="/images/carousel3.jpg" as="image" crossOrigin="anonymous" /> */}
-        <link
-          rel="preload"
-          href="/images/cattle-group.jpg"
-          as="image"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/images/cow-icon.png"
-          as="image"
-          crossOrigin="anonymous"
-        />
-        {/* viewport para móviles */}
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/* Tus preload existentes */}
-      </head>
+      <head>{/* Ya no precargamos imágenes que no usamos */}</head>
       <body
         className={`${inter.variable} ${playfair.variable} font-sans overflow-x-hidden`}
       >
