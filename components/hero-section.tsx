@@ -172,6 +172,20 @@ export function HeroSection() {
                 </motion.div>
               </AnimatePresence>
 
+              {/* Texto informativo dinámico */}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={`info-${current}`}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  transition={{ duration: 0.3 }}
+                  className="absolute bottom-4 left-4 right-4 bg-customGreen-dark/60 backdrop-blur-sm text-center text-white text-base font-medium px-3 py-2 rounded-lg shadow-md"
+                >
+                  {slides[current].description}
+                </motion.div>
+              </AnimatePresence>
+
               {/* Flechas */}
               <div className="absolute inset-y-0 left-4 flex items-center z-10">
                 <Button
@@ -209,12 +223,17 @@ export function HeroSection() {
                 ))}
               </div>
             </div>
-
-            <div className="absolute -bottom-6 -right-6 w-24 h-24 rounded-full bg-customAccent flex items-center justify-center animate-float">
+            <div className="absolute -top-10 -right-2 w-28 h-28 rounded-full bg-gradient-to-br from-customAccent to-customGreen flex items-center justify-center shadow-xl animate-float">
               <div className="text-center">
-                <p className="text-xs font-bold text-customGreen">PRÓXIMO</p>
-                <p className="text-lg font-bold text-customGreen">REMATE</p>
-                <p className="text-xs text-customGreen">21 MAYO</p>
+                <span className="block text-xs font-semibold uppercase tracking-wide text-white">
+                  Próximo
+                </span>
+                <span className="block text-2xl font-bold uppercase leading-none text-white drop-shadow-md">
+                  Remate
+                </span>
+                <span className="block text-sm font-medium uppercase tracking-wide text-white">
+                  21 Mayo
+                </span>
               </div>
             </div>
           </motion.div>
