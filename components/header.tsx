@@ -65,7 +65,7 @@ export function Header() {
               transition={{ duration: 0.3, delay: navItems.length * 0.1 }}
             >
               <Button
-                className="bg-customAccent text-customGreen hover:bg-customAccent/90 font-medium px-5 lg:px-7 text-sm lg:text-base ml-2 shadow-md hover:shadow-lg transition-all duration-300"
+                className="bg-customAccent-light text-customGreen hover:bg-customAccent-light/90 font-medium px-5 lg:px-7 text-sm lg:text-base ml-2 shadow-md hover:shadow-lg transition-all duration-300"
                 size="sm"
                 asChild
               >
@@ -110,7 +110,7 @@ export function Header() {
                 </Link>
               ))}
               <Button
-                className="bg-customAccent text-customGreen hover:bg-customAccent/90 font-medium w-full mt-2 shadow-md"
+                className="bg-customAccent-light text-customGreen hover:bg-customAccent/90 font-medium w-full mt-2 shadow-md"
                 asChild
               >
                 <Link href="/#contacto" onClick={() => setIsOpen(false)}>

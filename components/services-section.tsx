@@ -10,6 +10,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import cesar from "@/public/images/cesar.jpg";
 
 const services = [
   {
@@ -17,8 +18,7 @@ const services = [
     title: "Remates Ferias",
     description:
       "Organizamos remates ferias mensuales con las mejores condiciones del mercado.",
-    image:
-      "https://images.unsplash.com/photo-1560013689-95f0c34b7ebb?q=80&w=2070&auto=format&fit=crop",
+    image: cesar,
   },
   {
     icon: <ShoppingCart className="h-8 w-8 text-customAccent" />,
@@ -87,7 +87,7 @@ export function ServicesSection() {
                   src={service.image}
                   alt={service.title}
                   fill
-                  className="object-cover"
+                  className="object-cover [object-position:50%_45%]"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-customGreen/80 to-transparent opacity-60"></div>
