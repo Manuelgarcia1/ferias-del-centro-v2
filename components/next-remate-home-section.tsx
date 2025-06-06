@@ -19,7 +19,7 @@ export function NextRemateSection() {
           initial={{ y: 20, opacity: 0 }}
           animate={isInView ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16 max-w-3xl mx-auto"
+          className="text-center mb-10 max-w-3xl mx-auto"
         >
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -122,9 +122,8 @@ export function NextRemateSection() {
                         </ul>
                       </div>
                     </div>
-
                     <Button className="bg-customGreen hover:bg-customGreen/90 text-white group w-full">
-                      Ver detalles completos
+                      Ver estadísticas y próximos remates
                       <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Button>
                   </div>

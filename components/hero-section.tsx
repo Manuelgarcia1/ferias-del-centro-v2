@@ -88,7 +88,7 @@ export function HeroSection() {
                 className="bg-customAccent text-customGreen hover:bg-customAccent/90 group"
                 asChild
               >
-                <Link href="/remates">
+                <Link href="#remates">
                   Ver Remates
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
