@@ -195,6 +195,7 @@ export function HeroSection() {
                   size="icon"
                   className="rounded-full p-3 bg-black/20 hover:bg-white/20 transition"
                   onClick={prevSlide}
+                  aria-label="Anterior"
                 >
                   <ChevronLeft className="h-8 w-8 text-white" />
                 </Button>
@@ -205,6 +206,7 @@ export function HeroSection() {
                   size="icon"
                   className="rounded-full p-3 bg-black/20 hover:bg-white/20 transition"
                   onClick={nextSlide}
+                  aria-label="Siguiente"
                 >
                   <ChevronRight className="h-8 w-8 text-white" />
                 </Button>
@@ -216,10 +218,9 @@ export function HeroSection() {
                   <button
                     key={index}
                     onClick={() => setCurrent(index)}
-                    className={`h-2 rounded-full transition-all ${
-                      index === current
-                        ? "bg-customAccent w-8"
-                        : "bg-white/50 w-2"
+                    aria-label={`Ir a slide ${index + 1}`}
+                    className={`h-4 w-4 md:h-4 md:w-4 rounded-full transition-all focus:outline-none ${
+                      index === current ? "bg-customAccent" : "bg-white/50"
                     }`}
                   />
                 ))}
