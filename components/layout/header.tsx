@@ -65,7 +65,7 @@ export function Header() {
               transition={{ duration: 0.3, delay: navItems.length * 0.1 }}
             >
               <Button
-                className="bg-customAccent-light text-customGreen hover:bg-customAccent-light/90 font-medium px-5 lg:px-7 text-sm lg:text-base ml-2 shadow-md hover:shadow-lg transition-all duration-300"
+                className="bg-customGreen text-white hover:bg-customGreen/90 font-medium px-5 lg:px-7 text-sm lg:text-base ml-2 shadow-md hover:shadow-lg transition-all duration-300"
                 size="sm"
                 asChild
               >
@@ -80,6 +80,7 @@ export function Header() {
             size="icon"
             className="md:hidden text-white p-2 relative z-50"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
@@ -110,7 +111,7 @@ export function Header() {
                 </Link>
               ))}
               <Button
-                className="bg-customAccent-light text-customGreen hover:bg-customAccent/90 font-medium w-full mt-2 shadow-md"
+                className="bg-white text-customGreen hover:bg-customGreen hover:text-white font-medium w-full mt-2 shadow-md hover:shadow-lg transition"
                 asChild
               >
                 <Link href="/#contacto" onClick={() => setIsOpen(false)}>
