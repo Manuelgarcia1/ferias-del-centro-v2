@@ -26,7 +26,19 @@ export const viewport = {
 export const metadata: Metadata = {
   title: "Ferias del Centro - Desde 1983",
   description:
-    "Somos una empresa con más de 40 años de trayectoria, buscando día a día ofrecer el mejor servicio de comercialización de hacienda.",
+    "Ferias del Centro es una empresa con más de 40 años de trayectoria, especializada en la comercialización de hacienda en San Carlos de Bolívar.",
+  keywords: [
+    "ferias de ganado",
+    "remates",
+    "comercialización de hacienda",
+    "San Carlos de Bolívar",
+    "ferias del centro",
+    "ganadería Argentina",
+  ],
+  authors: [{ name: "Ferias del Centro SRL" }],
+  creator: "Ferias del Centro",
+  publisher: "Ferias del Centro SRL",
+  robots: "index, follow",
 };
 
 export default function RootLayout({
@@ -36,7 +48,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" suppressHydrationWarning>
-      <head>{/* Ya no precargamos imágenes que no usamos */}</head>
+      <head>
+        <link
+          rel="icon"
+          href="images/favicon-final.png"
+          type="image/png"
+          sizes="64x64"
+        />
+      </head>
       <body
         className={`${inter.variable} ${playfair.variable} font-sans overflow-x-hidden`}
       >
