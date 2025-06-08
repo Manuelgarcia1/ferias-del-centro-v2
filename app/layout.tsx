@@ -2,10 +2,10 @@ import type React from "react";
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
-import { WhatsAppButton } from "@/components/whatsapp-button";
+import { ThemeProvider } from "@/components/common/theme-provider";
+import { Header } from "@/components/layout/header";
+import { Footer } from "@/components/layout/footer";
+import { WhatsAppButton } from "@/components/common/whatsapp-button";
 
 const inter = Inter({
   subsets: ["latin"],

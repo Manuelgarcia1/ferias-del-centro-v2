@@ -1,11 +1,9 @@
-import { HeroSection } from "@/components/hero-section";
-import { AboutSection } from "@/components/about-section";
-import { ServicesSection } from "@/components/services-section";
-import { NextRemateSection } from "@/components/next-remate-home-section";
-import { StatsSection } from "@/components/stats-section";
-import { FaqSection } from "@/components/faq-section";
-import { ContactSection } from "@/components/contact-section";
-import { CtaSection } from "@/components/cta-section";
+import { HeroSection } from "@/components/sections/hero-section";
+import { AboutSection } from "@/components/sections/about-section";
+import { ServicesSection } from "@/components/sections/services-section";
+import { NextRemateSection } from "@/components/sections/next-remate-home-section";
+import { StatsSection } from "@/components/sections/stats-section";
+import { ContactSection } from "@/components/sections/contact-section";
 
 export default function Home() {
   return (
@@ -21,9 +19,6 @@ export default function Home() {
         <ServicesSection />
       </div>
       <StatsSection />
-
-      <FaqSection />
-      <CtaSection />
       <div id="contacto">
         <ContactSection />
       </div>

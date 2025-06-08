@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Logo } from "@/components/logo";
+import { Logo } from "@/components/common/logo";
 
 const navItems = [
   { name: "Inicio", href: "/" },

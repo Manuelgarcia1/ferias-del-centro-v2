@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Facebook, Instagram, MapPin, Phone, Mail, Github } from "lucide-react";
-import { Logo } from "@/components/logo";
+import { Logo } from "@/components/common/logo";
 import { Button } from "@/components/ui/button";
 
 export function Footer() {
