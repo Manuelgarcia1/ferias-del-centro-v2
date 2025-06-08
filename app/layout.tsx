@@ -21,13 +21,13 @@ const playfair = Playfair_Display({
 export const viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
 };
 
 export const metadata: Metadata = {
   title: "Ferias del Centro - Desde 1983",
   description:
     "Somos una empresa con más de 40 años de trayectoria, buscando día a día ofrecer el mejor servicio de comercialización de hacienda.",
+  viewport: "width=device-width, initial-scale=1",
 };
 
 export default function RootLayout({

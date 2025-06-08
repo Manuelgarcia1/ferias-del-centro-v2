@@ -47,15 +47,15 @@ export function StatsSection() {
             transition={{ duration: 0.6 }}
             className="mb-4"
           >
-            <h3 className="text-xl font-medium text-customAccent uppercase tracking-wider">
+            <h2 className="text-xl font-medium text-customAccent uppercase tracking-wider">
               Nuestros Números
-            </h3>
+            </h2>
           </motion.div>
 
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h3 className="text-3xl md:text-4xl font-bold mb-4">
             Beneficios de Elegir{" "}
             <span className="text-customAccent">Ferias del Centro</span>
-          </h2>
+          </h3>
           <p className="text-lg text-white/80 max-w-3xl mx-auto">
             Nuestra trayectoria y experiencia nos respaldan. Estos son algunos
             de los números que demuestran nuestro compromiso con la excelencia.

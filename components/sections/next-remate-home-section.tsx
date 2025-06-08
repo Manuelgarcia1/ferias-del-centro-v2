@@ -28,14 +28,14 @@ export function NextRemateSection() {
             transition={{ duration: 0.6 }}
             className="mb-4"
           >
-            <h3 className="text-xl font-medium text-customAccent uppercase tracking-wider">
+            <h2 className="text-xl font-medium text-customAccent uppercase tracking-wider">
               Remates mensuales
-            </h3>
+            </h2>
           </motion.div>
-          <h2 className="text-3xl md:text-4xl font-bold text-customGreen mb-4">
+          <h3 className="text-3xl md:text-4xl font-bold text-customGreen mb-4">
             Optimiza tus negociaciones con{" "}
             <span className="text-customAccent">remates</span> profesionales
-          </h2>
+          </h3>
 
           <p className="text-lg text-gray-700 max-w-2xl mx-auto">
             Organizamos remates mensuales con las mejores condiciones del

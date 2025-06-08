@@ -18,13 +18,15 @@ export function Footer() {
           </div>
           <div className="flex space-x-4">
             <a
-              href="#"
+              href="https://instagram.com/tu_cuenta"
+              aria-label="Instagram de Ferias del Centro"
               className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition"
             >
               <Instagram className="h-5 w-5 text-white" />
             </a>
             <a
-              href="#"
+              href="https://facebook.com/tu_pagina"
+              aria-label="Facebook de Ferias del Centro"
               className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition"
             >
               <Facebook className="h-5 w-5 text-white" />

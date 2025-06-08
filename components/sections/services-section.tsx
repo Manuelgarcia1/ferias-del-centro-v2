@@ -56,16 +56,16 @@ export function ServicesSection() {
             transition={{ duration: 0.6 }}
             className="mb-4"
           >
-            <h3 className="text-xl font-medium text-customAccent uppercase tracking-wider">
+            <h2 className="text-xl font-medium text-customAccent uppercase tracking-wider">
               Nuestros Servicios
-            </h3>
+            </h2>
           </motion.div>
 
-          <h2 className="text-3xl md:text-4xl font-bold text-customGreen mb-4">
+          <h3 className="text-3xl md:text-4xl font-bold text-customGreen mb-4">
             Una Plataforma para Hacer la{" "}
             <span className="text-customAccent">Comercialización</span>{" "}
             Eficiente
-          </h2>
+          </h3>
           <p className="text-lg text-gray-700">
             Ofrecemos soluciones integrales para la comercialización de
             hacienda, adaptadas a las necesidades de cada productor.
