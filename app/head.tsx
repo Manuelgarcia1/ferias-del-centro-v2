@@ -8,6 +8,7 @@ export default function Head() {
         name="description"
         content="Ferias del Centro - Comercialización de Hacienda"
       />
+      <meta name="theme-color" content="#0D3D2E" />
       <link rel="icon" href="/favicon.ico" />
     </>
   );

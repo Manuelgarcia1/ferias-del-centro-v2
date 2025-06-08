@@ -60,6 +60,7 @@ const config = {
           dark: "#1a2e29",
         },
         customAccent: {
+          contrastSafe: "#74B145", // sobrio y accesible
           DEFAULT: "#548132", // tono oliva suave, saturación moderada
           light: "#687E40", // más claro para hover/alt
           dark: "#5B7328", // más oscuro para estados activos

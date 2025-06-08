@@ -74,7 +74,9 @@ export function HeroSection() {
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
               Revolucionando la{" "}
-              <span className="text-customAccent">Comercialización</span>
+              <span className="text-customAccent-contrastSafe">
+                Comercialización
+              </span>
               <br />
               de Hacienda
             </h1>
@@ -85,7 +87,7 @@ export function HeroSection() {
             <div className="flex flex-wrap gap-4">
               <Button
                 size="lg"
-                className="bg-customAccent text-customGreen hover:bg-customAccent/90 group"
+                className="bg-customAccent-contrastSafe text-customGreen hover:bg-customAccent-contrastSafe/90 group"
                 asChild
               >
                 <Link href="#remates">
@@ -104,7 +106,7 @@ export function HeroSection() {
             <div className="flex items-center mt-10 mb-10 space-x-6">
               {/* Ubicación */}
               <div className="flex items-center">
-                <div className="w-10 h-10 rounded-full bg-customAccent flex items-center justify-center mr-3">
+                <div className="w-10 h-10 rounded-full bg-customAccent-contrastSafe flex items-center justify-center mr-3">
                   <MapPin className="h-5 w-5 text-customGreen" />
                 </div>
                 <div>
@@ -115,7 +117,7 @@ export function HeroSection() {
 
               {/* Experiencia */}
               <div className="flex items-center">
-                <div className="w-10 h-10 rounded-full bg-customAccent flex items-center justify-center mr-3">
+                <div className="w-10 h-10 rounded-full bg-customAccent-contrastSafe flex items-center justify-center mr-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-5 w-5 text-customGreen"
