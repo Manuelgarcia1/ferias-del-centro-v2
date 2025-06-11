@@ -16,8 +16,7 @@ export function ContactSection() {
     {
       icon: <MapPin className="h-5 w-5 text-customAccent" />,
       title: "Dirección",
-      details:
-        "Av. San Martín 455, San Carlos de Bolívar, Buenos Aires, Argentina",
+      details: "Av. Almte. Brown 361, San Carlos de Bolivar.",
     },
     {
       icon: <Phone className="h-5 w-5 text-customAccent" />,
@@ -177,7 +176,7 @@ export function ContactSection() {
               <div className="absolute inset-0 mt-20 bg-gray-200 rounded-b-2xl">
                 <iframe
                   title="Ubicación de Ferias del Centro"
-                  src="https://maps.google.com/maps?q=Av.%20San%20Mart%C3%ADn%20455,%20San%20Carlos%20de%20Bol%C3%ADvar&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3218.5086533759027!2d-61.11399992343833!3d-36.22713594504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bfe3aca4a8acff%3A0x7e445efeccd9b9a4!2sFerias%20del%20Centro!5e0!3m2!1ses!2sar!4v1749678785229!5m2!1ses!2sar"
                   className="w-full h-full border-0"
                   allowFullScreen
                   loading="lazy"
