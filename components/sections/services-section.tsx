@@ -129,15 +129,15 @@ export function ServicesSection() {
                 necesidad. Consulte por nuestros planes y facilidades de pago.
               </p>
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 rounded-full bg-customAccent flex items-center justify-center">
-                  <DollarSign className="h-6 w-6 text-customGreen" />
+                <div className="w-12 h-12 rounded-full bg-customAccent-contrastSafe flex items-center justify-center">
+                  <DollarSign className="h-6 w-6 text-customGreen-dark" />
                 </div>
                 <div>
                   <p className="text-white font-bold">Opciones Flexibles</p>
                   <p className="text-white/70">Adaptadas a sus necesidades</p>
                 </div>
               </div>
-              <Button className="mt-8 bg-customAccent text-customGreen hover:bg-customAccent/90 self-start">
+              <Button className="mt-8 bg-customAccent-contrastSafe text-customGreen-dark hover:bg-customAccent-contrastSafe/90 self-start">
                 Consultar Opciones
               </Button>
             </div>

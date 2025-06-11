@@ -9,16 +9,15 @@ export function WhatsAppButton() {
       href="https://wa.me/5491112345678"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-16 h-16 bg-green-500 rounded-full shadow-lg hover:bg-green-600 transition-colors"
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
-      whileInView={{ y: 0, opacity: 1 }}
+      className="fixed bottom-3 right-3 z-50 flex items-center gap-2 px-3 py-2 bg-green-500 rounded-lg shadow-lg text-white hover:bg-green-600 transition-all"
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 1 }}
     >
-      <MessageCircle className="text-white h-8 w-8" />
-      <span className="sr-only">¿Podemos ayudarte?</span>
+      <MessageCircle className="h-6 w-6" />
+      <span className="font-medium whitespace-nowrap">¿Podemos ayudarte?</span>
     </motion.a>
   );
 }

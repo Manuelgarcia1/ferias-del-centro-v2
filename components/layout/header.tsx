@@ -51,7 +51,7 @@ export function Header() {
               >
                 <Link
                   href={item.href}
-                  className="text-white font-medium hover:text-customAccent transition-colors text-sm lg:text-base relative group"
+                  className="text-white font-medium transition-colors text-sm lg:text-base relative group"
                 >
                   {item.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-customAccent transition-all duration-300 group-hover:w-full"></span>

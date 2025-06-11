@@ -59,7 +59,7 @@ export function ContactSection() {
           </motion.div>
 
           <h3 className="text-3xl md:text-4xl font-bold text-customGreen mb-4">
-            Estamos a su <span className="text-customAccent">Disposición</span>
+            Estamos a tu <span className="text-customAccent">Disposición</span>
           </h3>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto">
             Contáctenos para obtener más información sobre nuestros servicios o

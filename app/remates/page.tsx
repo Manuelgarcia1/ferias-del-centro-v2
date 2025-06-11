@@ -201,7 +201,7 @@ const preciosUltimoRemate = {
 
 // Datos de resultados del último remate
 const resultadosUltimoRemate = {
-  fecha: "21 de Mayo, 2025",
+  fecha: "21/05/2025",
   totalCabezas: 1000,
   totalVendidas: 987,
   porcentajeVenta: 98.7,
@@ -336,9 +336,7 @@ export default function RematesPage() {
             <h2 className="text-2xl font-bold text-customGreen">
               Precios del Último Remate
             </h2>
-            <Badge className="ml-4 bg-customAccent/10 text-customAccent">
-              {preciosUltimoRemate.fecha}
-            </Badge>
+            <Badge className="ml-4 mt-1">{preciosUltimoRemate.fecha}</Badge>
           </div>
 
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-6">
@@ -526,9 +524,7 @@ export default function RematesPage() {
             <h2 className="text-2xl font-bold text-customGreen">
               Resultados del Último Remate
             </h2>
-            <Badge className="ml-4 bg-customAccent/10 text-customAccent">
-              {resultadosUltimoRemate.fecha}
-            </Badge>
+            <Badge className="ml-4 mt-1">{resultadosUltimoRemate.fecha}</Badge>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">

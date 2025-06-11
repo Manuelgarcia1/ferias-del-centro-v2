@@ -10,17 +10,17 @@ const stats = [
     description: "Brindando servicios de calidad desde 1983",
   },
   {
-    value: "500+",
+    value: "1920+",
     label: "Remates realizados con éxito",
     description: "Operaciones transparentes y eficientes",
   },
   {
-    value: "1000+",
+    value: "2000+",
     label: "Clientes satisfechos",
     description: "Productores que confían en nuestros servicios",
   },
   {
-    value: "10K+",
+    value: "30K+",
     label: "Cabezas comercializadas por año",
     description: "Volumen de operaciones en constante crecimiento",
   },
@@ -47,14 +47,16 @@ export function StatsSection() {
             transition={{ duration: 0.6 }}
             className="mb-4"
           >
-            <h2 className="text-xl font-medium text-customAccent uppercase tracking-wider">
+            <h2 className="text-xl font-medium text-customAccent-contrastSafe uppercase tracking-wider">
               Nuestros Números
             </h2>
           </motion.div>
 
           <h3 className="text-3xl md:text-4xl font-bold mb-4">
             Beneficios de Elegir{" "}
-            <span className="text-customAccent">Ferias del Centro</span>
+            <span className="text-customAccent-contrastSafe">
+              Ferias del Centro
+            </span>
           </h3>
           <p className="text-lg text-white/80 max-w-3xl mx-auto">
             Nuestra trayectoria y experiencia nos respaldan. Estos son algunos
@@ -72,7 +74,7 @@ export function StatsSection() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center"
             >
-              <div className="text-4xl md:text-5xl font-bold text-customAccent mb-2">
+              <div className="text-4xl md:text-5xl font-bold text-customAccent-contrastSafe mb-2">
                 {stat.value}
               </div>
               <h3 className="text-xl font-bold mb-2">{stat.label}</h3>
