@@ -25,18 +25,18 @@ export default function RematesPage() {
                 Información completa sobre nuestros remates mensuales
               </p>
             </div>
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2 sm:space-x-3 md:space-x-4">
               <a href="#precios-ultimo-remate">
                 <Button
                   variant="outline"
-                  className="px-4 py-2 text-sm md:text-base border-customGreen text-customGreen hover:bg-customGreen hover:text-white"
+                  className="px-3 py-1.5 text-xs sm:text-sm md:text-base border-customGreen text-customGreen hover:bg-customGreen hover:text-white"
                 >
                   Ver Estadísticas
                 </Button>
               </a>
               <Button
                 variant="outline"
-                className="px-4 py-2 text-sm md:text-base border-customGreen text-customGreen hover:bg-customGreen hover:text-white"
+                className="px-3 py-1.5 text-xs sm:text-sm md:text-base border-customGreen text-customGreen hover:bg-customGreen hover:text-white"
               >
                 <Download className="h-4 w-4 mr-2" />
                 Descargar Catálogo
