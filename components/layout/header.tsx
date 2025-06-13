@@ -65,7 +65,7 @@ export function Header() {
               transition={{ duration: 0.3, delay: navItems.length * 0.1 }}
             >
               <Button
-                className="bg-customGreen text-white hover:bg-customGreen/90 font-medium px-5 lg:px-7 text-sm lg:text-base ml-2 shadow-md hover:shadow-lg transition-all duration-300"
+                className="bg-white text-customGreen hover:bg-gray-100 border border-white font-semibold px-5 lg:px-6 text-sm lg:text-base transition-all duration-200"
                 size="sm"
                 asChild
               >
@@ -78,7 +78,7 @@ export function Header() {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden text-white p-2 relative z-50"
+            className="md:hidden text-white p-2 relative z-50 !bg-transparent !text-white !shadow-none !ring-0 !outline-none focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-0 active:outline-none active:ring-0 active:bg-transparent"
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
           >

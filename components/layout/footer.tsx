@@ -19,6 +19,7 @@ export function Footer() {
           <div className="flex space-x-4">
             <a
               href="https://instagram.com/ferias.del.centro.srl"
+              target="_blank"
               aria-label="Instagram de Ferias del Centro"
               className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition"
             >
@@ -26,6 +27,7 @@ export function Footer() {
             </a>
             <a
               href="https://web.facebook.com/cesarabel.diez"
+              target="_blank"
               aria-label="Facebook de Ferias del Centro"
               className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition"
             >
