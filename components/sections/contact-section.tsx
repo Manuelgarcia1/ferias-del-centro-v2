@@ -35,6 +35,28 @@ export function ContactSection() {
     },
   ];
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const data = {
+      nombre: (e.target as any).nombre.value,
+      email: (e.target as any).email.value,
+      asunto: (e.target as any).asunto.value,
+      mensaje: (e.target as any).mensaje.value,
+    };
+
+    const res = await fetch("/api/contacto", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    const result = await res.json();
+    alert(result.message);
+  };
+
   return (
     <section className="py-24 bg-gray-50" ref={ref}>
       <div className="container mx-auto px-4">
@@ -80,7 +102,10 @@ export function ContactSection() {
                 Envíanos un mensaje
               </h3>
 
-              <form className="space-y-6 flex-1 flex flex-col">
+              <form
+                onSubmit={handleSubmit}
+                className="space-y-6 flex-1 flex flex-col"
+              >
                 <div className="grid grid-cols-1 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="nombre" className="text-customGreen">

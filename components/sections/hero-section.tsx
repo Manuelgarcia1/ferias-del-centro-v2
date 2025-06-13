@@ -26,7 +26,7 @@ const slides: {
     title: "Comercialización de Hacienda",
     subtitle: "San Carlos de Bolívar",
     description:
-      "Somos una empresa con más de 40 años de trayectoria, buscando día a día ofrecer el mejor servicio de comercialización de hacienda.",
+      "Impulsamos el movimiento de haciendas conectando productores, compradores y oportunidades reales de negocio.",
   },
   {
     id: 2,
