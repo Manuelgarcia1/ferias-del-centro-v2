@@ -193,7 +193,7 @@ export function HeroSection() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="rounded-full p-3 bg-black/20 hover:bg-white/20 transition"
+                  className="rounded-full p-3 bg-black/40 hover:bg-white/30 transition"
                   onClick={prevSlide}
                   aria-label="Anterior"
                 >
@@ -204,7 +204,7 @@ export function HeroSection() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="rounded-full p-3 bg-black/20 hover:bg-white/20 transition"
+                  className="rounded-full p-3 bg-black/40 hover:bg-white/30 transition"
                   onClick={nextSlide}
                   aria-label="Siguiente"
                 >
@@ -220,13 +220,15 @@ export function HeroSection() {
                     onClick={() => setCurrent(index)}
                     aria-label={`Ir a slide ${index + 1}`}
                     className={`h-4 w-4 md:h-4 md:w-4 rounded-full transition-all focus:outline-none ${
-                      index === current ? "bg-customAccent" : "bg-white/50"
+                      index === current
+                        ? "bg-customAccent-contrastSafe ring-2 ring-white"
+                        : "bg-white/70 hover:bg-white"
                     }`}
                   />
                 ))}
               </div>
             </div>
-            <div className="absolute -top-10 -right-2 w-28 h-28 rounded-full bg-gradient-to-br from-customAccent to-customGreen flex items-center justify-center shadow-xl animate-float">
+            <div className="absolute -top-10 -right-2 w-28 h-28 rounded-full bg-gradient-to-br from-customAccent to-customAccent-contrastSafe flex items-center justify-center shadow-xl animate-float">
               <div className="text-center">
                 <span className="block text-xs font-semibold uppercase tracking-wide text-white">
                   Próximo
