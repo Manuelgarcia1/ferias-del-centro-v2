@@ -65,7 +65,7 @@ export function Header() {
               transition={{ duration: 0.3, delay: navItems.length * 0.1 }}
             >
               <Button
-                className="bg-white text-customGreen hover:bg-gray-100 border border-white font-semibold px-5 lg:px-6 text-sm lg:text-base transition-all duration-200"
+                className="bg-white text-customGreen-dark hover:bg-gray-100 border border-white font-semibold px-5 lg:px-6 text-sm lg:text-base transition-all duration-200"
                 size="sm"
                 asChild
               >

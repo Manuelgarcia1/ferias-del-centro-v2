@@ -4,16 +4,30 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { BarChart3, TrendingUp } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Download } from "lucide-react";
 
 export function PreciosUltimoRemate({ precios }: { precios: any }) {
   return (
     <section id="precios-ultimo-remate">
-      <div className="flex items-center mb-8">
-        <BarChart3 className="h-6 w-6 text-customGreen mr-3" />
-        <h2 className="text-2xl font-bold text-customGreen">
-          Precios del Último Remate
-        </h2>
-        <Badge className="ml-4 mt-1">{precios.fecha}</Badge>
+      <div className="flex items-center justify-between mb-8 flex-wrap gap-4">
+        {/* Grupo izquierdo */}
+        <div className="flex items-center gap-3 flex-wrap">
+          <BarChart3 className="h-6 w-6 text-customGreen" />
+          <h2 className="text-2xl font-bold text-customGreen">
+            Precios del Último Remate
+          </h2>
+          <Badge className="mt-1">{precios.fecha}</Badge>
+        </div>
+
+        {/* Grupo derecho: el botón */}
+        <Button
+          variant="outline"
+          className="px-3 py-1.5 text-xs sm:text-sm md:text-base border-customGreen text-customGreen hover:bg-customGreen hover:text-white"
+        >
+          <Download className="h-4 w-4 mr-2" />
+          Descargar precios
+        </Button>
       </div>
 
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-6">

@@ -10,6 +10,7 @@ import { preciosUltimoRemate } from "@/app/remates/components/data/preciosUltimo
 import { resultadosUltimoRemate } from "@/app/remates/components/data/resultadosUltimoRemate";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
+import { handleDownloadPDF } from "@/app/remates/pdf";
 
 export default function RematesPage() {
   return (
@@ -36,6 +37,7 @@ export default function RematesPage() {
               </a>
               <Button
                 variant="outline"
+                onClick={handleDownloadPDF}
                 className="px-3 py-1.5 text-xs sm:text-sm md:text-base border-customGreen text-customGreen hover:bg-customGreen hover:text-white"
               >
                 <Download className="h-4 w-4 mr-2" />
