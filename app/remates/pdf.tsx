@@ -2,46 +2,38 @@
 
 import { jsPDF } from "jspdf";
 
-// Utilidad para forzar descarga en navegadores móviles
-const downloadBlob = (blob: Blob, filename: string) => {
-  const link = document.createElement("a");
-  const url = URL.createObjectURL(blob);
-  link.href = url;
-  link.download = filename;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-  URL.revokeObjectURL(url);
+// Calcula dimensiones escaladas para que la imagen encaje completa
+const calculateScaledDimensions = (
+  img: HTMLImageElement,
+  maxWidth: number,
+  maxHeight: number
+) => {
+  const ratio = Math.min(maxWidth / img.width, maxHeight / img.height);
+  return {
+    width: img.width * ratio,
+    height: img.height * ratio,
+  };
 };
 
 // Descarga un PDF con una sola imagen (catálogo)
 export const handleDownloadCatalogPDF = () => {
   const pdf = new jsPDF();
+  const src = "/images/flyer.jpg";
   const img = new Image();
-  img.src = "/images/flyer.jpg";
-
+  img.src = src;
   img.onload = () => {
-    const maxWidth = pdf.internal.pageSize.getWidth();
-    const maxHeight = pdf.internal.pageSize.getHeight();
-    const ratio = Math.min(maxWidth / img.width, maxHeight / img.height);
-    const width = img.width * ratio;
-    const height = img.height * ratio;
-    const x = (maxWidth - width) / 2;
-    const y = (maxHeight - height) / 2;
-
-    pdf.addImage(img, "JPEG", x, y, width, height);
-    // Generar blob y forzar descarga
-    const blob = pdf.output("blob");
-    downloadBlob(blob, "catalogo-remate.pdf");
+    const width = pdf.internal.pageSize.getWidth();
+    const height = (img.height * width) / img.width;
+    pdf.addImage(img, "JPEG", 0, 0, width, height);
+    pdf.save("catalogo-remate.pdf");
   };
-
   img.onerror = (err) => console.error("Error al cargar catálogo:", err);
 };
 
-// Descarga un PDF con dos imágenes (catálogo + resultados de precios)
+// Descarga un PDF con dos imágenes (resultados + graficos)
 export const handleDownloadResultsPDF = () => {
   const pdf = new jsPDF();
-  const imageSources = ["/images/flyer.jpg", "/images/precios.jpg"];
+  const imageSources = ["/images/resultados.jpg", "/images/graficos.jpg"];
 
   const loadImage = (src: string): Promise<HTMLImageElement> =>
     new Promise((resolve, reject) => {
@@ -57,17 +49,16 @@ export const handleDownloadResultsPDF = () => {
         if (idx > 0) pdf.addPage();
         const maxWidth = pdf.internal.pageSize.getWidth();
         const maxHeight = pdf.internal.pageSize.getHeight();
-        const ratio = Math.min(maxWidth / img.width, maxHeight / img.height);
-        const width = img.width * ratio;
-        const height = img.height * ratio;
+        const { width, height } = calculateScaledDimensions(
+          img,
+          maxWidth,
+          maxHeight
+        );
         const x = (maxWidth - width) / 2;
         const y = (maxHeight - height) / 2;
-
         pdf.addImage(img, "JPEG", x, y, width, height);
       });
-      // Generar blob y forzar descarga
-      const blob = pdf.output("blob");
-      downloadBlob(blob, "resultados-precios.pdf");
+      pdf.save("resultados-precios.pdf");
     })
     .catch((error) => {
       console.error("Error al cargar imágenes para resultados:", error);
