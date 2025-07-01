@@ -16,6 +16,8 @@ export function VideoIntro() {
     if (!video) return;
 
     if (isInView) {
+      // Carga el video (lazy) y reproduce
+      video.load();
       video.play().catch(() => {});
     } else {
       video.pause();
@@ -32,9 +34,12 @@ export function VideoIntro() {
         muted
         loop
         playsInline
+        preload="none" // Desactiva preload automático
+        poster="/video-poster.jpg" // Imagen de placeholder antes de la carga
         className="w-full h-auto rounded-xl"
       >
-        <source src="/video.mp4" type="video/mp4" />
+        {/* Fuente sólo cuando entra en viewport */}
+        {isInView && <source src="/video.mp4" type="video/mp4" />}
         Tu navegador no soporta el video.
       </video>
     </div>
