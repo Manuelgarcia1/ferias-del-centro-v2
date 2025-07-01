@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { BarChart3, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
+import { handleDownloadResultsPDF } from "@/app/remates/pdf";
 
 export function PreciosUltimoRemate({ precios }: { precios: any }) {
   return (
@@ -23,6 +24,7 @@ export function PreciosUltimoRemate({ precios }: { precios: any }) {
         {/* Grupo derecho: el botón */}
         <Button
           variant="outline"
+          onClick={handleDownloadResultsPDF}
           className="px-3 py-1.5 text-xs sm:text-sm md:text-base border-customGreen text-customGreen hover:bg-customGreen hover:text-white"
         >
           <Download className="h-4 w-4 mr-2" />
