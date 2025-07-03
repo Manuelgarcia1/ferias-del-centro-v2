@@ -96,7 +96,7 @@ export function NextRemateSection() {
                         <div className="flex items-center bg-gray-100 px-3 py-1 rounded-lg">
                           <Calendar className="h-4 w-4 text-customGreen mr-2" />
                           <span className="font-bold text-xs sm:text-sm">
-                            21 de Mayo
+                            16 de Julio
                           </span>
                         </div>
                       </div>
