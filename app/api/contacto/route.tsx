@@ -9,9 +9,9 @@ export async function POST(req: Request) {
 
   try {
     await resend.emails.send({
-      from: "no-reply@resend.dev", // remitente por defecto de Resend
-      to: process.env.EMAIL_RECEIVER!, // tu casilla de info@
-      replyTo: email, // el e-mail que completó el usuario
+      from: process.env.SENDER_EMAIL!, // e.g. "no-reply@resend.dev"
+      to: process.env.EMAIL_RECEIVER!, // <— ¡aquí debe ir tu casilla!
+      replyTo: email, // camelCase
       subject: asunto,
       html: `
         <h3>Mensaje de ${nombre}</h3>
