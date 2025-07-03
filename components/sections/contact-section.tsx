@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import toast from "react-hot-toast";
 
 export function ContactSection() {
   const ref = useRef(null);
@@ -37,24 +38,40 @@ export function ContactSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const form = e.target as any;
+    const nombre = form.nombre.value.trim();
+    const email = form.email.value.trim();
+    const asunto = form.asunto.value.trim();
+    const mensaje = form.mensaje.value.trim();
 
-    const data = {
-      nombre: (e.target as any).nombre.value,
-      email: (e.target as any).email.value,
-      asunto: (e.target as any).asunto.value,
-      mensaje: (e.target as any).mensaje.value,
-    };
+    // 1️⃣ Validación
+    if (!nombre || !email || !asunto || !mensaje) {
+      toast.error("Por favor completa todos los campos.", { id: "contact" });
+      return;
+    }
 
-    const res = await fetch("/api/contacto", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
+    // 2️⃣ Indicar carga
+    toast.loading("Enviando mensaje…", { id: "contact" });
 
-    const result = await res.json();
-    alert(result.message);
+    try {
+      const res = await fetch("/api/contacto", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ nombre, email, asunto, mensaje }),
+      });
+      const result = await res.json();
+
+      if (res.ok) {
+        toast.success(result.message || "Enviado correctamente", {
+          id: "contact",
+        });
+        form.reset();
+      } else {
+        toast.error(result.message || "Error al enviar", { id: "contact" });
+      }
+    } catch (err: any) {
+      toast.error(err.message || "Error de red", { id: "contact" });
+    }
   };
 
   return (

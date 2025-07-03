@@ -1,4 +1,3 @@
-// app/api/contact/route.ts
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
@@ -9,9 +8,9 @@ export async function POST(req: Request) {
 
   try {
     await resend.emails.send({
-      from: process.env.SENDER_EMAIL!, // e.g. "no-reply@resend.dev"
-      to: process.env.EMAIL_RECEIVER!, // <— ¡aquí debe ir tu casilla!
-      replyTo: email, // camelCase
+      from: process.env.SENDER_EMAIL!, // ej. "contacto@feriasdelcentrosrl.com"
+      to: process.env.EMAIL_RECEIVER!, // ej. "info@feriasdelcentrosrl.com"
+      replyTo: email,
       subject: asunto,
       html: `
         <h3>Mensaje de ${nombre}</h3>
