@@ -32,7 +32,7 @@ export function ContactSection() {
     {
       icon: <Clock className="h-5 w-5 text-customAccent" />,
       title: "Horario de Atención",
-      details: "Lunes a Viernes: 8:00 - 18:00",
+      details: "Lunes a Viernes: 7:30 - 15:00\nSábados: 7:30 - 12:00",
     },
   ];
 
@@ -204,7 +204,9 @@ export function ContactSection() {
                       <h4 className="font-bold text-customGreen">
                         {item.title}
                       </h4>
-                      <p className="text-gray-600">{item.details}</p>
+                      <p className="text-gray-600 whitespace-pre-line">
+                        {item.details}
+                      </p>
                     </div>
                   </div>
                 ))}
