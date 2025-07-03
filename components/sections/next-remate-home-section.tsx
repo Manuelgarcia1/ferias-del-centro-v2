@@ -51,9 +51,9 @@ export function NextRemateSection() {
           className="max-w-4xl mx-auto"
         >
           <Link href="/remates" className="block">
-            <div className="bg-white rounded-2xl overflow-hidden shadow-xl border border-gray-100 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-              <div className="grid grid-cols-1 md:grid-cols-2">
-                <div className="relative h-[300px] md:h-auto">
+            <div className="bg-white rounded-2xl overflow-hidden shadow-xl border border-gray-100 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 lg:h-[320px]">
+              <div className="grid grid-cols-1 md:grid-cols-2 ">
+                <div className="relative h-48 md:h-full lg:h-full">
                   <Image
                     src="/images/vacas4.jpg"
                     alt="1000 Vacunos"
@@ -67,15 +67,15 @@ export function NextRemateSection() {
                   {/* Overlay anclado abajo */}
                   <div className="absolute bottom-0 inset-x-0 flex flex-col items-center justify-end text-center pb-4">
                     {/* Número un poco más grande */}
-                    <h2 className="text-6xl md:text-7xl font-semibold text-white leading-none">
+                    <h2 className="text-4xl sm:text-5xl md:text-7xl font-semibold text-white leading-none">
                       1000
                     </h2>
                     {/* “Vacunos” también en Playfair */}
-                    <h3 className="text-3xl md:text-4xl font-semibold text-white/90">
+                    <h3 className="text-xl sm:text-2xl md:text-4xl font-semibold text-white/90">
                       Vacunos
                     </h3>
                     {/* Pill descriptiva mucho más pequeña */}
-                    <span className="mt-2 inline-block bg-customGreen text-white rounded-full px-3 py-1 text-[0.5rem] md:text-[0.625rem] font-body">
+                    <span className="sm:mt-2 inline-block bg-customGreen text-white rounded-full px-1 py-0.5 text-[0.375rem] sm:text-[0.625rem] md:text-[0.75rem] font-body">
                       Gordo, invernada y cría
                     </span>
                   </div>
@@ -86,43 +86,47 @@ export function NextRemateSection() {
                     <div>
                       <div className="flex items-center justify-between mb-4">
                         <div>
-                          <h3 className="text-2xl font-bold text-customGreen">
+                          <h3 className="text-xl sm:text-2xl font-bold text-customGreen">
                             REMATE FERIA
                           </h3>
-                          <p className="text-xl text-customAccent italic font-medium">
+                          <p className="text-base sm:text-lg text-customAccent italic font-medium">
                             Mensual
                           </p>
                         </div>
                         <div className="flex items-center bg-gray-100 px-3 py-1 rounded-lg">
                           <Calendar className="h-4 w-4 text-customGreen mr-2" />
-                          <span className="font-bold text-sm">21 de Mayo</span>
+                          <span className="font-bold text-xs sm:text-sm">
+                            21 de Mayo
+                          </span>
                         </div>
                       </div>
 
                       <div className="flex flex-wrap gap-4 mb-4">
                         <div className="flex items-center">
                           <MapPin className="h-4 w-4 text-customGreen mr-2" />
-                          <span className="text-gray-700 text-sm">
+                          <span className="text-gray-700 text-xs sm:text-sm">
                             Sociedad rural
                           </span>
                         </div>
                         <div className="flex items-center">
                           <Clock className="h-4 w-4 text-customGreen mr-2" />
-                          <span className="text-gray-700 text-sm">13hs</span>
+                          <span className="text-gray-700 text-xs sm:text-sm">
+                            13hs
+                          </span>
                         </div>
                       </div>
 
-                      <div className="bg-gray-50 p-3 rounded-lg mb-4">
-                        <p className="text-gray-700 text-sm font-medium">
-                          DESTACAMOS:
+                      <div className="bg-gray-100 border-l-4 border-customAccent p-4 rounded-lg mb-4 shadow-sm">
+                        <p className="text-customAccent-dark text-sm sm:text-base font-semibold uppercase mb-2">
+                          Destacamos:
                         </p>
-                        <ul className="text-sm text-gray-600 mt-1">
-                          <li>• 700 TERNEROS/AS DE INVERNADA</li>
-                          <li>• 30 VACAS A.A 2DA Y 3RA PARICION PREÑADAS</li>
+                        <ul className="list-disc list-inside space-y-1 text-gray-700 text-xs sm:text-sm">
+                          <li>700 terneros/as de invernada</li>
+                          <li>30 vacas A.A. 2da y 3ra parición preñadas</li>
                         </ul>
                       </div>
                     </div>
-                    <Button className="bg-customGreen hover:bg-customGreen/90 text-white group w-full">
+                    <Button className="bg-customGreen hover:bg-customGreen/90 text-white group w-full md:w-auto py-2 sm:py-3 px-4 text-sm sm:text-base rounded-md flex items-center justify-center">
                       Ver estadísticas y próximos remates
                       <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Button>

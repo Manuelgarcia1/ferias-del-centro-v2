@@ -19,6 +19,14 @@ export function Footer() {
           </div>
           <div className="flex space-x-2">
             <a
+              href="https://wa.me/+5492314619451"
+              target="_blank"
+              aria-label="WhatsApp de Ferias del Centro"
+              className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition"
+            >
+              <FaWhatsapp className="h-5 w-5" />
+            </a>
+            <a
               href="https://instagram.com/ferias.del.centro.srl"
               target="_blank"
               aria-label="Instagram de Ferias del Centro"
@@ -33,14 +41,6 @@ export function Footer() {
               className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition"
             >
               <Facebook className="h-5 w-5 text-white" />
-            </a>
-            <a
-              href="https://wa.me/+5492314619451"
-              target="_blank"
-              aria-label="WhatsApp de Ferias del Centro"
-              className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition"
-            >
-              <FaWhatsapp className="h-5 w-5" />
             </a>
           </div>
         </div>

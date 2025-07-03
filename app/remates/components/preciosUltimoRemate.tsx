@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { BarChart3, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
-import { handleDownloadResultsPDF } from "@/app/remates/pdf";
+import { handleDownloadResultsPDF } from "../pdf";
 
 export function PreciosUltimoRemate({ precios }: { precios: any }) {
   return (
