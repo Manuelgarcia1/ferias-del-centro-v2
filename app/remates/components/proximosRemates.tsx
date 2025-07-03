@@ -10,7 +10,7 @@ export function ProximosRemates({ remates }: { remates: rematesDataType[] }) {
     <section>
       <div className="flex items-center mb-8">
         <Calendar className="h-6 w-6 text-customGreen mr-3" />
-        <h2 className="text-2xl font-bold text-customGreen">
+        <h2 className="text-2xl md:text-3xl font-bold text-customGreen">
           Próximos Remates
         </h2>
       </div>

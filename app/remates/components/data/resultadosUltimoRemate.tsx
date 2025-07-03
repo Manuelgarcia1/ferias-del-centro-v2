@@ -1,14 +1,28 @@
 export const resultadosUltimoRemate = {
-  fecha: "21/05/2025",
-  totalCabezas: 1000,
-  totalVendidas: 987,
-  porcentajeVenta: 98.7,
-  promedioGeneral: 3.456,
-  mejorPrecio: 4.345,
+  fecha: "24/06/2025",
+  totalCabezas: "1153",
+  totalVendidas: "1153",
+  porcentajeVenta: "100",
+  promedioGeneral: "3.4837",
+  mejorPrecio: "1.460.000",
   categorias: [
-    { tipo: "Terneros", vendidos: 685, total: 700, promedio: 3.889 },
-    { tipo: "Terneras", vendidos: 108, total: 112, promedio: 3.499 },
-    { tipo: "Vacas", vendidos: 114, total: 114, promedio: 1.167 },
-    { tipo: "Vaquillonas", vendidos: 80, total: 74, promedio: 3.351 },
+    {
+      tipo: "Machos",
+      vendidos: "663",
+      total: "663",
+      promedio: "3.7618",
+    },
+    {
+      tipo: "Hembras",
+      vendidos: "426",
+      total: "426",
+      promedio: "3.4151",
+    },
+    {
+      tipo: "Vacas con garantía de preñez",
+      vendidos: "64",
+      total: "64",
+      promedio: "1.0591",
+    },
   ],
 };

@@ -22,7 +22,7 @@ export function ContactSection() {
     {
       icon: <Phone className="h-5 w-5 text-customAccent" />,
       title: "Teléfono",
-      details: "+54 2314 123456",
+      details: "+5492314619451 ",
     },
     {
       icon: <Mail className="h-5 w-5 text-customAccent" />,

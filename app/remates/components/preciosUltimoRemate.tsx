@@ -15,7 +15,7 @@ export function PreciosUltimoRemate({ precios }: { precios: any }) {
         {/* Grupo izquierdo */}
         <div className="flex items-center gap-3 flex-wrap">
           <BarChart3 className="h-6 w-6 text-customGreen" />
-          <h2 className="text-2xl font-bold text-customGreen">
+          <h2 className="text-2xl md:text-3xl font-bold text-customGreen">
             Precios del Último Remate
           </h2>
           <Badge className="mt-1">{precios.fecha}</Badge>
@@ -110,7 +110,10 @@ export function PreciosUltimoRemate({ precios }: { precios: any }) {
                     CATEGORÍA
                   </th>
                   <th className="px-4 py-3 text-center text-sm font-medium text-gray-700">
-                    RANGO DE PRECIOS
+                    $ MIN
+                  </th>
+                  <th className="px-4 py-3 text-center text-sm font-medium text-gray-700">
+                    $ MAX
                   </th>
                   <th className="px-4 py-3 text-center text-sm font-medium text-gray-700">
                     PROMEDIO
@@ -130,7 +133,10 @@ export function PreciosUltimoRemate({ precios }: { precios: any }) {
                       {item.categoria}
                     </td>
                     <td className="px-4 py-3 text-sm text-center">
-                      {item.precio}
+                      {item.min}
+                    </td>
+                    <td className="px-4 py-3 text-sm text-center">
+                      {item.max}
                     </td>
                     <td className="px-4 py-3 text-sm text-center font-medium">
                       {item.promedio}

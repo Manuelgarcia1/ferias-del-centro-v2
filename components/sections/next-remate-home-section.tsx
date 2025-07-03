@@ -53,7 +53,7 @@ export function NextRemateSection() {
           <Link href="/remates" className="block">
             <div className="bg-white rounded-2xl shadow-xl border border-gray-100 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 flex flex-col">
               <div className="flex flex-col md:flex-row">
-                <div className="relative w-full md:w-1/2 aspect-[4/3] md:aspect-auto  overflow-hidden rounded-tl-2xl rounded-bl-2xl">
+                <div className="relative w-full md:w-1/2 aspect-[4/3] md:aspect-auto  overflow-hidden  rounded-tl-2xl rounded-tr-2xl  md:rounded-br-none md:rounded-tr-none md:rounded-tl-2xl md:rounded-bl-2xl">
                   <Image
                     src="/images/vacas4.jpg"
                     alt="Vacunos"

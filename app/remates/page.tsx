@@ -52,9 +52,7 @@ export default function RematesPage() {
         <Head>
           <link rel="preload" as="video" href="/video.mp4" type="video/mp4" />
         </Head>
-
         <VideoIntro />
-        <ProximosRemates remates={rematesData} />
         <PreciosUltimoRemate precios={preciosUltimoRemate} />
         <ResultadosRemate resultados={resultadosUltimoRemate} />
       </div>
