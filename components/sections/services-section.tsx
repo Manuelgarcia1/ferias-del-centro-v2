@@ -35,7 +35,7 @@ const services = [
 ];
 
 export function ServicesSection() {
-  const WA_NUMBER = "5492314440279"; // sin “+” ni espacios
+  const WA_NUMBER = "5492314619451"; // sin “+” ni espacios
 
   return (
     <section className="py-16 bg-gray-50">

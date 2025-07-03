@@ -51,12 +51,12 @@ export function NextRemateSection() {
           className="max-w-4xl mx-auto"
         >
           <Link href="/remates" className="block">
-            <div className="bg-white rounded-2xl overflow-hidden shadow-xl border border-gray-100 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 lg:h-[320px]">
-              <div className="grid grid-cols-1 md:grid-cols-2 ">
-                <div className="relative h-48 md:h-full lg:h-full">
+            <div className="bg-white rounded-2xl shadow-xl border border-gray-100 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 flex flex-col">
+              <div className="flex flex-col md:flex-row">
+                <div className="relative w-full md:w-1/2 aspect-[4/3] md:aspect-auto  overflow-hidden rounded-tl-2xl rounded-bl-2xl">
                   <Image
                     src="/images/vacas4.jpg"
-                    alt="1000 Vacunos"
+                    alt="Vacunos"
                     fill
                     priority // <-- aquí
                     sizes="(max-width: 640px) 100vw, 50vw"
@@ -68,7 +68,7 @@ export function NextRemateSection() {
                   <div className="absolute bottom-0 inset-x-0 flex flex-col items-center justify-end text-center pb-4">
                     {/* Número un poco más grande */}
                     <h2 className="text-4xl sm:text-5xl md:text-7xl font-semibold text-white leading-none">
-                      1000
+                      700
                     </h2>
                     {/* “Vacunos” también en Playfair */}
                     <h3 className="text-xl sm:text-2xl md:text-4xl font-semibold text-white/90">
@@ -81,7 +81,7 @@ export function NextRemateSection() {
                   </div>
                 </div>
 
-                <div className="p-6">
+                <div className="p-6 flex-1 flex flex-col justify-between">
                   <div className="flex flex-col h-full justify-between">
                     <div>
                       <div className="flex items-center justify-between mb-4">
@@ -121,8 +121,7 @@ export function NextRemateSection() {
                           Destacamos:
                         </p>
                         <ul className="list-disc list-inside space-y-1 text-gray-700 text-xs sm:text-sm">
-                          <li>700 terneros/as de invernada</li>
-                          <li>30 vacas A.A. 2da y 3ra parición preñadas</li>
+                          <li>200 terneros/as de invernada</li>
                         </ul>
                       </div>
                     </div>
