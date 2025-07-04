@@ -237,7 +237,7 @@ export function HeroSection() {
                   Remate
                 </span>
                 <span className="block text-sm font-medium uppercase tracking-wide text-white">
-                  21 Mayo
+                  16 Julio
                 </span>
               </div>
             </div>
