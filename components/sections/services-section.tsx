@@ -35,7 +35,8 @@ const services = [
 ];
 
 export function ServicesSection() {
-  const WA_NUMBER = "5492314619451"; // sin “+” ni espacios
+  const WA_NUMBER_CONSULTAS = "5492314619451";
+  const WA_NUMBER_FINANCIACION = "549221615-1058";
 
   return (
     <section className="py-16 bg-gray-50">
@@ -63,8 +64,8 @@ export function ServicesSection() {
         {/* Grid de cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((svc, idx) => {
-            const mensaje = `Hola, me interesa más info sobre *${svc.title}*`;
-            const waLink = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(
+            const mensaje = `Hola me comunico de la pagina web, me interesa más info sobre *${svc.title}*`;
+            const waLink = `https://wa.me/${WA_NUMBER_CONSULTAS}?text=${encodeURIComponent(
               mensaje
             )}`;
 
@@ -145,8 +146,8 @@ export function ServicesSection() {
                 </div>
               </div>
               <a
-                href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(
-                  "Hola, deseo consultar opciones de financiación"
+                href={`https://wa.me/${WA_NUMBER_FINANCIACION}?text=${encodeURIComponent(
+                  "Hola me comunico de la pagina web, deseo consultar opciones de financiación"
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
