@@ -36,7 +36,7 @@ const services = [
 
 export function ServicesSection() {
   const WA_NUMBER_CONSULTAS = "5492314619451";
-  const WA_NUMBER_FINANCIACION = "549221615-1058";
+  const WA_NUMBER_FINANCIACION = "5492216151058";
 
   return (
     <section className="py-16 bg-gray-50">
