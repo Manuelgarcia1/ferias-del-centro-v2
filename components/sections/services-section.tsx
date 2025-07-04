@@ -155,7 +155,7 @@ export function ServicesSection() {
               </div>
               <a
                 href={`https://wa.me/${WA_NUMBER_FINANCIACION}?text=${encodeURIComponent(
-                  "Hola me comunico de la pagina web, deseo consultar opciones de financiación"
+                  "Hola, me comunico de la pagina web. Quisiera más info sobre opciones de *financiación*"
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
