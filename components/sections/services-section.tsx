@@ -10,6 +10,9 @@ import {
   ArrowRight,
 } from "lucide-react";
 
+const WA_NUMBER_CONSULTAS = "5492314619451";
+const WA_NUMBER_FINANCIACION = "542216151058";
+
 const services = [
   {
     icon: <Calendar className="h-8 w-8 text-customAccent" />,
@@ -17,6 +20,9 @@ const services = [
     description:
       "Organizamos remates ferias mensuales con las mejores condiciones del mercado.",
     image: "/images/cesar.jpg",
+    phone: WA_NUMBER_CONSULTAS,
+    text: (title: string) =>
+      `Hola, me comunico de la página web. Quisiera más info sobre *${title}*`,
   },
   {
     icon: <ShoppingCart className="h-8 w-8 text-customAccent" />,
@@ -24,6 +30,9 @@ const services = [
     description:
       "Facilitamos operaciones directas entre productores con total transparencia.",
     image: "/images/compraVenta.jpg",
+    phone: WA_NUMBER_CONSULTAS,
+    text: (title: string) =>
+      `Hola, me comunico de la página web. Quisiera más info sobre *${title}*`,
   },
   {
     icon: <LineChart className="h-8 w-8 text-customAccent" />,
@@ -31,13 +40,13 @@ const services = [
     description:
       "Brindamos asesoramiento profesional para optimizar sus operaciones comerciales.",
     image: "/images/asesoramiento.jpg",
+    phone: WA_NUMBER_FINANCIACION,
+    text: (title: string) =>
+      `Hola, me comunico de la página web. Quisiera más info sobre *${title}*`,
   },
 ];
 
 export function ServicesSection() {
-  const WA_NUMBER_CONSULTAS = "5492314619451";
-  const WA_NUMBER_FINANCIACION = "5492216151058";
-
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -64,10 +73,9 @@ export function ServicesSection() {
         {/* Grid de cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((svc, idx) => {
-            const mensaje = `Hola me comunico de la pagina web, me interesa más info sobre *${svc.title}*`;
-            const waLink = `https://wa.me/${WA_NUMBER_CONSULTAS}?text=${encodeURIComponent(
-              mensaje
-            )}`;
+            const waLink = `https://api.whatsapp.com/send?phone=${
+              svc.phone
+            }&text=${encodeURIComponent(svc.text(svc.title))}`;
 
             return (
               <motion.div
