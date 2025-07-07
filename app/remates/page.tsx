@@ -2,10 +2,8 @@
 
 import Head from "next/head";
 import { VideoIntro } from "@/app/remates/components/videoIntro";
-import { ProximosRemates } from "@/app/remates/components/proximosRemates";
 import { PreciosUltimoRemate } from "@/app/remates/components/preciosUltimoRemate";
 import { ResultadosRemate } from "@/app/remates/components/resultadosRemate";
-import { rematesData } from "@/app/remates/components/data/rematesData";
 import { preciosUltimoRemate } from "@/app/remates/components/data/preciosUltimoRemate";
 import { resultadosUltimoRemate } from "@/app/remates/components/data/resultadosUltimoRemate";
 import { Button } from "@/components/ui/button";

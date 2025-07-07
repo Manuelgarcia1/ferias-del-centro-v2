@@ -1,15 +1,16 @@
 export default function Head() {
   return (
     <>
-      <title>Ferias del Centro</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta charSet="UTF-8" />
+      {/* El viewport y favicon ya vienen de metadata en layout.tsx */}
+      {/* Si quisieras un tag extra, por ejemplo Open Graph: */}
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Ferias del Centro – Desde 1983" />
       <meta
-        name="description"
-        content="Ferias del Centro - Comercialización de Hacienda"
+        property="og:description"
+        content="Más de 40 años comercializando hacienda en San Carlos de Bolívar."
       />
-      <meta name="theme-color" content="#0D3D2E" />
-      <link rel="icon" href="/favicon.ico" />
+      {/* etc. */}
     </>
   );
 }
