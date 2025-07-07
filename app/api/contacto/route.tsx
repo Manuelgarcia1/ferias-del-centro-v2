@@ -8,8 +8,8 @@ export async function POST(req: Request) {
 
   try {
     await resend.emails.send({
-      from: process.env.SENDER_EMAIL!, // ej. "contacto@feriasdelcentrosrl.com"
-      to: process.env.EMAIL_RECEIVER!, // ej. "info@feriasdelcentrosrl.com"
+      from: process.env.SENDER_EMAIL!, 
+      to: process.env.EMAIL_RECEIVER!, 
       replyTo: email,
       subject: asunto,
       html: `
