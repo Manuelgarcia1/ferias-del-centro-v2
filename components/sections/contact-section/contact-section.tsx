@@ -5,7 +5,7 @@ import { motion, useInView } from "framer-motion";
 import { ContactHeader } from "./contact-header";
 import { ContactForm } from "./contact-form";
 import { ContactInfoCard } from "./contact-info-card";
-import { ContactMap } from "./contact-map";
+import { ContactMap } from "./contact-map"; // Usando la versión lazy loading
 import { contactInfoData } from "./contact-data";
 
 export function ContactSection() {
