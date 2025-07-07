@@ -31,5 +31,5 @@ Incluye integración de envío de emails con **Resend**, deployment en **Vercel*
 
 1. Clonar el repositorio  
    ```bash
-   git clone https://github.com/tu-usuario/ferias-del-centro.git
+   https://github.com/Manuelgarcia1/ferias-del-centro-v2.git
    cd ferias-del-centro
