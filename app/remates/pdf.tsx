@@ -18,7 +18,7 @@ const calculateScaledDimensions = (
 // Descarga un PDF con una sola imagen (catálogo)
 export const handleDownloadCatalogPDF = () => {
   const pdf = new jsPDF();
-  const src = "/images/flyer.jpg";
+  const src = "/images/flyer.png";
   const img = new Image();
   img.src = src;
   img.onload = () => {

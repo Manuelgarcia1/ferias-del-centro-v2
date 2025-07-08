@@ -11,8 +11,6 @@ export function ContactMap({ isInView }: ContactMapProps) {
   const [showMap, setShowMap] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  // Enlace directo a Google Maps
-
   const handleShowMap = () => {
     setIsLoading(true);
     setShowMap(true);
