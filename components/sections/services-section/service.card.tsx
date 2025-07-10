@@ -17,10 +17,7 @@ export function ServiceCard({ service, index }: ServiceCardProps) {
   };
 
   return (
-    <motion.a
-      href={whatsappLink}
-      target="_blank"
-      rel="noopener noreferrer"
+    <motion.div
       initial={{ y: 40, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       whileHover={{
@@ -31,7 +28,7 @@ export function ServiceCard({ service, index }: ServiceCardProps) {
       whileTap={{ scale: 0.98 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.15, duration: 0.5 }}
-      className="bg-white rounded-2xl shadow-lg flex flex-col overflow-hidden cursor-pointer group block hover-only-desktop"
+      className="bg-white rounded-2xl shadow-lg flex flex-col overflow-hidden hover-only-desktop group"
     >
       {/* Imagen */}
       <div className="relative h-56 overflow-hidden">
@@ -81,34 +78,30 @@ export function ServiceCard({ service, index }: ServiceCardProps) {
       </div>
 
       {/* Contenido */}
-      <div className="p-4 flex flex-col flex-1 justify-between">
+      <div className="p-4 flex flex-col flex-1 justify-between relative z-10">
         <div>
-          <motion.h4
-            className="text-xl font-bold text-customGreen mb-2 group-hover:text-customAccent transition-colors duration-300"
-            whileHover={{ x: 2 }}
-            transition={{ duration: 0.2 }}
-          >
+          <h4 className="text-xl font-bold text-customGreen mb-2 group-hover:text-customAccent transition-colors duration-300">
             {service.title}
-          </motion.h4>
+          </h4>
           <p className="text-gray-600 mb-4 group-hover:text-gray-700 transition-colors duration-300">
             {service.description}
           </p>
         </div>
 
-        {/* Call to action mejorado */}
-        <motion.div
-          className="flex items-center justify-between mt-2"
-          whileHover={{ x: 4 }}
-          transition={{ duration: 0.2 }}
+        {/* Call to action - SIMPLIFICADO */}
+        <a
+          href={whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-between mt-2 cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors duration-200 group/link relative z-20"
+          style={{ position: "relative", zIndex: 20 }}
         >
-          <span className="text-customAccent font-bold text-sm group-hover:text-customAccent/80 transition-colors duration-300">
+          <span className="text-customAccent font-bold text-sm group-hover/link:text-customAccent/80 transition-colors duration-300">
             Contactar por WhatsApp
           </span>
-          <motion.div whileHover={{ x: 2 }} transition={{ duration: 0.2 }}>
-            <ArrowRight className="h-4 w-4 text-customAccent" />
-          </motion.div>
-        </motion.div>
+          <ArrowRight className="h-4 w-4 text-customAccent group-hover/link:translate-x-1 transition-transform duration-200" />
+        </a>
       </div>
-    </motion.a>
+    </motion.div>
   );
 }

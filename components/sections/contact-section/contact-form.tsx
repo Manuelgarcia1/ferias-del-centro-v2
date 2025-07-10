@@ -57,7 +57,7 @@ export function ContactForm({ isInView }: ContactFormProps) {
       initial={{ x: -50, opacity: 0 }}
       animate={isInView ? { x: 0, opacity: 1 } : { x: -50, opacity: 0 }}
       transition={{ duration: 0.8, delay: 0.2 }}
-      className="h-full"
+      className="h-full relative z-10 pointer-events-auto"
     >
       <div className="bg-white p-8 rounded-2xl shadow-lg h-full flex flex-col">
         <h3 className="text-2xl font-bold text-customGreen mb-6">

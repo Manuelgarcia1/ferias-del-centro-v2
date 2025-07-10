@@ -16,8 +16,12 @@ export function RemateCard({ remate, isInView }: RemateCardProps) {
       transition={{ duration: 0.8, delay: 0.2 }}
       className="max-w-4xl mx-auto"
     >
-      <Link href="/remates" className="block">
-        <div className="bg-white rounded-2xl shadow-xl border border-gray-100 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 flex flex-col">
+      <Link
+        href="/remates"
+        className="block w-full h-full cursor-pointer group"
+        style={{ display: "block", width: "100%" }}
+      >
+        <div className="bg-white rounded-2xl shadow-xl border border-gray-100 transition-all duration-300 group-hover:shadow-2xl group-hover:-translate-y-1 w-full h-full overflow-hidden">
           <div className="flex flex-col md:flex-row">
             {/* Imagen */}
             <div className="relative w-full md:w-1/2 aspect-[4/3] md:aspect-auto overflow-hidden rounded-tl-2xl rounded-tr-2xl md:rounded-br-none md:rounded-tr-none md:rounded-tl-2xl md:rounded-bl-2xl">
@@ -46,7 +50,7 @@ export function RemateCard({ remate, isInView }: RemateCardProps) {
             </div>
 
             {/* Contenido */}
-            <div className="p-6 flex-1 flex flex-col justify-between">
+            <div className="flex-1 p-6 flex flex-col justify-between relative z-10 cursor-pointer">
               <div className="flex flex-col h-full justify-between">
                 <div>
                   {/* Header del remate */}
