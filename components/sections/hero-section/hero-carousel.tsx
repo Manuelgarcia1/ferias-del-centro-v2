@@ -102,7 +102,7 @@ export function HeroCarousel({ slides }: HeroCarouselProps) {
         </div>
       </div>
       {/* Insignia flotante del próximo remate */}
-      <div className="absolute top-4 right-4 w-28 h-28 rounded-full bg-gradient-to-br from-customAccent to-customAccent-contrastSafe flex items-center justify-center shadow-xl animate-float">
+      <div className="absolute -top-10 -right-2 w-28 h-28 rounded-full bg-gradient-to-br from-customAccent to-customAccent-contrastSafe flex items-center justify-center shadow-xl animate-float">
         <div className="text-center">
           <span className="block text-xs font-semibold uppercase tracking-wide text-white">
             Próximo
