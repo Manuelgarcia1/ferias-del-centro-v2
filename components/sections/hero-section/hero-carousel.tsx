@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useCallback } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -9,17 +8,14 @@ import type { HeroCarouselProps } from "./types";
 
 export function HeroCarousel({ slides }: HeroCarouselProps) {
   const [current, setCurrent] = useState<number>(0);
-
   const nextSlide = useCallback(
     () => setCurrent((c) => (c === slides.length - 1 ? 0 : c + 1)),
     [slides.length]
   );
-
   const prevSlide = useCallback(
     () => setCurrent((c) => (c === 0 ? slides.length - 1 : c - 1)),
     [slides.length]
   );
-
   return (
     <motion.div
       whileInView={{ y: 0, opacity: 1 }}
@@ -53,7 +49,6 @@ export function HeroCarousel({ slides }: HeroCarouselProps) {
             />
           </motion.div>
         </AnimatePresence>
-
         {/* Texto informativo dinámico */}
         <AnimatePresence mode="wait">
           <motion.div
@@ -67,7 +62,6 @@ export function HeroCarousel({ slides }: HeroCarouselProps) {
             {slides[current].description}
           </motion.div>
         </AnimatePresence>
-
         {/* Flechas */}
         <div className="absolute inset-y-0 left-4 flex items-center z-10">
           <Button
@@ -91,7 +85,6 @@ export function HeroCarousel({ slides }: HeroCarouselProps) {
             <ChevronRight className="h-8 w-8 text-white" />
           </Button>
         </div>
-
         {/* Indicadores */}
         <div className="absolute bottom-24 left-0 right-0 flex justify-center space-x-2">
           {slides.map((_, index) => (
@@ -108,9 +101,8 @@ export function HeroCarousel({ slides }: HeroCarouselProps) {
           ))}
         </div>
       </div>
-
-      {/* Badge flotante del próximo remate */}
-      <div className="absolute -top-10 -right-2 w-28 h-28 rounded-full bg-gradient-to-br from-customAccent to-customAccent-contrastSafe flex items-center justify-center shadow-xl animate-float">
+      {/* Insignia flotante del próximo remate */}
+      <div className="absolute top-4 right-4 w-28 h-28 rounded-full bg-gradient-to-br from-customAccent to-customAccent-contrastSafe flex items-center justify-center shadow-xl animate-float">
         <div className="text-center">
           <span className="block text-xs font-semibold uppercase tracking-wide text-white">
             Próximo
