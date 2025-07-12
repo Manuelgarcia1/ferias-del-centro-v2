@@ -4,7 +4,7 @@ export const nextRemateData: RemateData = {
   id: "remate-julio-2024",
   title: "REMATE FERIA",
   subtitle: "Mensual",
-  date: "16 de Julio",
+  date: "24 de Julio",
   time: "13hs",
   location: "Sociedad rural",
   animalCount: 700,

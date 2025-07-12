@@ -111,7 +111,7 @@ export function HeroCarousel({ slides }: HeroCarouselProps) {
             Remate
           </span>
           <span className="block text-sm font-medium uppercase tracking-wide text-white">
-            16 Julio
+            24 Julio
           </span>
         </div>
       </div>
