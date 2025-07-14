@@ -9,6 +9,9 @@ import { Footer } from "@/components/layout/footer/footer";
 import { WhatsAppButton } from "@/components/common/whatsapp-button";
 import { Toaster } from "react-hot-toast";
 
+// --- IMPORTA GoogleAnalytics ---
+import { Analytics } from "@vercel/analytics/next";
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -60,6 +63,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${playfair.variable} font-sans overflow-x-hidden`}
       >
+        <Analytics />
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
