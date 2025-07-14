@@ -15,7 +15,7 @@ export const contactInfoData: ContactInfo[] = [
   {
     icon: <Mail className="h-5 w-5 text-customAccent" />,
     title: "Email",
-    details: "info@feriasdelcentro.com.ar",
+    details: "info@feriasdelcentro.com",
   },
   {
     icon: <Clock className="h-5 w-5 text-customAccent" />,
