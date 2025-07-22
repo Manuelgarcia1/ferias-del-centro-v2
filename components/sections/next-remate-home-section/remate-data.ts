@@ -10,7 +10,7 @@ export const nextRemateData: RemateData = {
   animalCount: 700,
   animalType: "Vacunos",
   category: "Gordo, invernada y cría",
-  highlights: ["200 terneros/as de invernada"],
+  highlights: ["30 Vacas A.A preñadas y paridas"],
   image: "/images/vacas4.jpg",
   imageAlt: "Vacunos",
 };
