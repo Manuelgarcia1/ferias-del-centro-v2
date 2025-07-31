@@ -59,7 +59,7 @@ export function FinancingCard({ phone, className }: FinancingCardProps) {
         {/* Imagen */}
         <div className="relative h-80 lg:h-auto">
           <Image
-            src="/images/financiacion.jpg"
+            src="/images/services-section/financiacion.jpg"
             alt="Financiación"
             fill
             priority

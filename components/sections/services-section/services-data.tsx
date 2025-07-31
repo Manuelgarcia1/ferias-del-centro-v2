@@ -12,7 +12,7 @@ export const servicesData: Service[] = [
     title: "Remates Ferias",
     description:
       "Organizamos remates ferias mensuales con las mejores condiciones del mercado.",
-    image: "/images/cesar.jpg",
+    image: "/images/services-section/cesar.jpg",
     phone: whatsappConfig.consultasNumber,
     text: (title: string) =>
       `Hola, me comunico de la página web. Quisiera más info sobre *${title}*`,
@@ -22,7 +22,7 @@ export const servicesData: Service[] = [
     title: "Compra y Venta Directa",
     description:
       "Facilitamos operaciones directas entre productores con total transparencia.",
-    image: "/images/compraVenta.jpg",
+    image: "/images/services-section/compraVenta.jpg",
     phone: whatsappConfig.consultasNumber,
     text: (title: string) =>
       `Hola, me comunico de la página web. Quisiera más info sobre *${title}*`,
@@ -32,7 +32,7 @@ export const servicesData: Service[] = [
     title: "Asesoramiento",
     description:
       "Brindamos asesoramiento profesional para optimizar sus operaciones comerciales.",
-    image: "/images/asesoramiento.jpg",
+    image: "/images/services-section/asesoramiento.jpg",
     phone: whatsappConfig.financiacionNumber,
     text: (title: string) =>
       `Hola, me comunico de la página web. Quisiera más info sobre *${title}*`,

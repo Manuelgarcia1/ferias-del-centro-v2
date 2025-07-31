@@ -18,7 +18,7 @@ const calculateScaledDimensions = (
 // Descarga un PDF con una sola imagen (catálogo)
 export const handleDownloadCatalogPDF = () => {
   const pdf = new jsPDF();
-  const src = "/images/flyer.png";
+  const src = "/images/remates/flyer.jpg";
   const img = new Image();
   img.src = src;
   img.onload = () => {
@@ -33,7 +33,7 @@ export const handleDownloadCatalogPDF = () => {
 // Descarga un PDF con dos imágenes (resultados + graficos)
 export const handleDownloadResultsPDF = () => {
   const pdf = new jsPDF();
-  const imageSources = ["/images/resultados.jpg", "/images/graficos.jpg"];
+  const imageSources = ["/images/remates/resultados.jpg", "/images/remates/graficos.jpg"];
 
   const loadImage = (src: string): Promise<HTMLImageElement> =>
     new Promise((resolve, reject) => {

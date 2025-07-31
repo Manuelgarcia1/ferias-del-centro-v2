@@ -1,7 +1,7 @@
 import type { Slide } from "./types";
-import Carousel1 from "@/public/images/Carousel1.jpg";
-import Carousel2 from "@/public/images/Carousel2.jpg";
-import Carousel3 from "@/public/images/Carousel3.jpg";
+import Carousel1 from "@/public/images/hero-section/Carousel1.jpg";
+import Carousel2 from "@/public/images/hero-section/Carousel2.jpg";
+import Carousel3 from "@/public/images/hero-section/Carousel3.jpg";
 
 export const heroSlides: Slide[] = [
   {
