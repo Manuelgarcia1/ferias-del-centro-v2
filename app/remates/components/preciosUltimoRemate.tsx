@@ -98,7 +98,7 @@ export function PreciosUltimoRemate({ precios }: { precios: any }) {
         <CardHeader className="bg-customGreen text-white">
           <CardTitle className="flex items-center">
             <TrendingUp className="h-5 w-5 mr-2" />
-            VACAS CON GARANTÍA DE PREÑEZ
+            VIENTRES
           </CardTitle>
         </CardHeader>
         <CardContent className="p-0">

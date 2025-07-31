@@ -4,11 +4,11 @@ import Head from "next/head";
 import { VideoIntro } from "@/app/remates/components/videoIntro";
 import { PreciosUltimoRemate } from "@/app/remates/components/preciosUltimoRemate";
 import { ResultadosRemate } from "@/app/remates/components/resultadosRemate";
-import { preciosUltimoRemate } from "@/app/remates/components/data/preciosUltimoRemate";
-import { resultadosUltimoRemate } from "@/app/remates/components/data/resultadosUltimoRemate";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import { handleDownloadCatalogPDF } from "@/app/remates/pdf";
+import { preciosUltimoRemate } from "./components/data/preciosultimoremate";
+import { resultadosUltimoRemate } from "./components/data/resultadosultimoremate";
 
 export default function RematesPage() {
   return (

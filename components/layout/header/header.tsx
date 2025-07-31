@@ -30,8 +30,8 @@ export function Header({ className }: HeaderProps) {
         <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-white/10"></div>
       </div>
 
-      <div className="container relative z-10 mx-auto px-6 md:px-10 lg:px-16 max-w-full">
-        <div className="flex items-center justify-between">
+     
+        <div className="container relative flex items-center justify-between px-4">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Logo className="h-14 w-auto" />
@@ -46,7 +46,7 @@ export function Header({ className }: HeaderProps) {
             onClick={() => setIsOpen(!isOpen)}
           />
         </div>
-      </div>
+     
 
       {/* Mobile Navigation */}
       <MobileNav
