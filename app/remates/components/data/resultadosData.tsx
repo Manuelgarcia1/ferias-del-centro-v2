@@ -1,8 +1,8 @@
 export const RESULTADOS_ULTIMO_REMATE = {
   fecha: "25/07/2025",
-  totalCabezas: "434",
-  totalVendidas: "434",
-  porcentajeVenta: "100",
+  totalCabezas: "1100",
+  totalVendidas: "1070",
+  porcentajeVenta: "98",
   promedioGeneral: "3.6247",
   mejorPrecio: "1.600.000",
   categorias: [
