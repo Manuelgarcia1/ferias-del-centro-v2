@@ -7,8 +7,8 @@ import { ResultadosRemate } from "@/app/remates/components/resultadosRemate";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import { handleDownloadCatalogPDF } from "@/app/remates/pdf";
-import { resultadosUltimoRemate } from "@/app/remates/components/data/resultadosultimoremate";
-import { preciosUltimoRemate } from "@/app/remates/components/data/preciosultimoremate";
+import preciosUltimoRemate from "./components/data/preciosultimoremate";
+import resultadosUltimoRemate from "./components/data/resultadosultimoremate";
 
 export default function RematesPage() {
   return (
