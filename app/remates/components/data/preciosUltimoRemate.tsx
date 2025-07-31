@@ -1,4 +1,4 @@
-export const preciosultimoremate = {
+export const PRECIOS_ULTIMO_REMATE = {
   fecha: "25/07/2025",
   machos: [
     {

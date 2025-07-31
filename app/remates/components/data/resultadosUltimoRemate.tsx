@@ -1,4 +1,4 @@
-export const resultadosultimoremate = {
+export const RESULTADOS_ULTIMO_REMATE = {
   fecha: "25/07/2025",
   totalCabezas: "434",
   totalVendidas: "434",

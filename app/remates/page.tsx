@@ -4,8 +4,8 @@ import Head from "next/head";
 import { VideoIntro } from "@/app/remates/components/videoIntro";
 import { PreciosUltimoRemate } from "@/app/remates/components/preciosUltimoRemate";
 import { ResultadosRemate } from "@/app/remates/components/resultadosRemate";
-import { preciosultimoremate } from "@/app/remates/components/data/preciosultimoremate";
-import { resultadosultimoremate } from "@/app/remates/components/data/resultadosultimoremate";
+import { PRECIOS_ULTIMO_REMATE } from "@/app/remates/components/data/preciosultimoremate";
+import { RESULTADOS_ULTIMO_REMATE } from "@/app/remates/components/data/resultadosultimoremate";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import { handleDownloadCatalogPDF } from "@/app/remates/pdf";
@@ -51,8 +51,8 @@ export default function RematesPage() {
           <link rel="preload" as="video" href="/video.mp4" type="video/mp4" />
         </Head>
         <VideoIntro />
-        <PreciosUltimoRemate precios={preciosultimoremate} />
-        <ResultadosRemate resultados={resultadosultimoremate} />
+        <PreciosUltimoRemate precios={PRECIOS_ULTIMO_REMATE} />
+        <ResultadosRemate resultados={RESULTADOS_ULTIMO_REMATE} />
       </div>
     </div>
   );
