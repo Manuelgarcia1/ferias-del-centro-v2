@@ -2,8 +2,8 @@ import { Calendar, ShoppingCart, LineChart } from "lucide-react";
 import type { Service, WhatsAppConfig } from "./types";
 
 export const whatsappConfig: WhatsAppConfig = {
-  consultasNumber: "5492314619451",
-  financiacionNumber: "542216151058",
+  consultasNumber: "542314574097",
+  financiacionNumber: "542314574097",
 };
 
 export const servicesData: Service[] = [

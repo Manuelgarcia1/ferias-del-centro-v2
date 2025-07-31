@@ -10,7 +10,7 @@ export const contactInfoData: ContactInfo[] = [
   {
     icon: <Phone className="h-5 w-5 text-customAccent" />,
     title: "Teléfono",
-    details: "+5492314619451",
+    details: "+5492314574097",
   },
   {
     icon: <Mail className="h-5 w-5 text-customAccent" />,
