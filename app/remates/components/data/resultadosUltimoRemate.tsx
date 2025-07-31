@@ -1,4 +1,4 @@
- const resultadosUltimoRemate = {
+export const resultadosultimoremate = {
   fecha: "25/07/2025",
   totalCabezas: "434",
   totalVendidas: "434",
@@ -26,5 +26,3 @@
     },
   ],
 };
-
-export default resultadosUltimoRemate;

@@ -1,4 +1,4 @@
-const preciosUltimoRemate = {
+export const preciosultimoremate = {
   fecha: "25/07/2025",
   machos: [
     {
@@ -154,5 +154,3 @@ const preciosUltimoRemate = {
     },
   ],
 };
-
-export default preciosUltimoRemate;
